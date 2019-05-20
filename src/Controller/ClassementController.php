@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Classement;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class ClassementController extends Controller{
+class ClassementController extends AbstractController {
 
   public function addAction(Request $request){
   }

@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Terrain;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class TerrainController extends Controller{
+class TerrainController extends AbstractController {
 
   public function addAction(Request $request){
   }

@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Equipe;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class EquipeController extends Controller{
+class EquipeController extends AbstractController {
 
   public function addAction(Request $request){
   }

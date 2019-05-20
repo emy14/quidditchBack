@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Tournoi;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class TournoiController extends Controller{
+class TournoiController extends AbstractController {
 
   public function addAction(Request $request){
   }

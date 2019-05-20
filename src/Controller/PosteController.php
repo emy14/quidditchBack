@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Poste;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class PosteController extends Controller{
+class PosteController extends AbstractController {
 
   public function addAction(Request $request){
   }

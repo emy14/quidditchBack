@@ -1,10 +1,12 @@
 <?php
 
-namespace Quidditch\Controller;
+namespace App\Controller;
 
 use Quidditch\Entity\Utilisateur;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class UtilisateurController extends Controller{
+class UtilisateurController extends AbstractController {
 
   public function addAction(Request $request){
   }
