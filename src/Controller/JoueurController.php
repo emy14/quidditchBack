@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Quidditch\Entity\Joueur;
-use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 

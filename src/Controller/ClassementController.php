@@ -6,6 +6,7 @@ use Quidditch\Entity\Classement;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 
 class ClassementController extends AbstractFOSRestController {
 
