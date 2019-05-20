@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use Quidditch\Entity\Match;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-class MatchController extends FOSRestController{
+class MatchController extends AbstractFOSRestController{
 
   /**
   * @Rest\Post("matchs")

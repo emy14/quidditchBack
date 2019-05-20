@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use Quidditch\Entity\Tournoi;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-class TournoiController extends FOSRestController {
+class TournoiController extends AbstractFOSRestController {
 
   /**
   * @Rest\Post("tournois")

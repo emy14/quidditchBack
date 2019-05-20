@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use Quidditch\Entity\Pays;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-class PaysController extends FOSRestController {
+class PaysController extends AbstractFOSRestController {
 
   /**
   * @Rest\Post("pays")

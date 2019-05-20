@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use Quidditch\Entity\Niveau;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-class NiveauController extends FOSRestController {
+class NiveauController extends AbstractFOSRestController {
 
   /**
   * @Rest\Post("niveaux")

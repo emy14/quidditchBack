@@ -4,9 +4,10 @@ namespace App\Controller;
 
 use Quidditch\Entity\Classement;
 use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-class ClassementController extends FOSRestController {
+class ClassementController extends AbstractFOSRestController {
 
   /**
   * @Rest\Post("classements")
