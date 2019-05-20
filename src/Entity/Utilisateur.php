@@ -14,11 +14,6 @@ class Utilisateur
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idUtilisateur;
 
     /**
@@ -31,21 +26,9 @@ class Utilisateur
      */
     private $role;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getIdUtilisateur(): ?int
+  public function getIdUtilisateur(): ?int
     {
         return $this->idUtilisateur;
-    }
-
-    public function setIdUtilisateur(int $idUtilisateur): self
-    {
-        $this->idUtilisateur = $idUtilisateur;
-
-        return $this;
     }
 
     public function getNom(): ?string

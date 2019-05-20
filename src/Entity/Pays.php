@@ -14,11 +14,6 @@ class Pays
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idPays;
 
     /**
@@ -26,21 +21,9 @@ class Pays
      */
     private $nom;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getIdPays(): ?int
     {
         return $this->idPays;
-    }
-
-    public function setIdPays(int $idPays): self
-    {
-        $this->idPays = $idPays;
-
-        return $this;
     }
 
     public function getNom(): ?string

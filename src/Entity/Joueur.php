@@ -14,11 +14,6 @@ class Joueur
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idJoueur;
 
     /**
@@ -54,21 +49,9 @@ class Joueur
      */
     private $equipe;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getIdJoueur(): ?int
     {
         return $this->idJoueur;
-    }
-
-    public function setIdJoueur(int $idJoueur): self
-    {
-        $this->idJoueur = $idJoueur;
-
-        return $this;
     }
 
     public function getNom(): ?string
@@ -95,12 +78,24 @@ class Joueur
         return $this;
     }
 
-    public function getNationalite(): ?int
+    /**
+     * Get nationalite
+     *
+     * @return \App\Entity\Pays $nationalite
+     */
+    public function getNationalite()
     {
         return $this->nationalite;
     }
 
-    public function setNationalite(?int $nationalite): self
+    /**
+     * Set nationalite
+     *
+     * @param \App\Entity\Pays $nationalite
+     *
+     * @return Joueur
+     */
+    public function setNationalite(Pays $nationalite = null)
     {
         $this->nationalite = $nationalite;
 
@@ -119,24 +114,48 @@ class Joueur
         return $this;
     }
 
-    public function getPoste(): ?int
+    /**
+     * Get poste
+     *
+     * @return \App\Entity\Poste $poste
+     */
+    public function getPoste()
     {
         return $this->poste;
     }
 
-    public function setPoste(?int $poste): self
+    /**
+     * Set poste
+     *
+     * @param \App\Entity\Poste $poste
+     *
+     * @return Joueur
+     */
+    public function setPoste(Poste $poste = null)
     {
         $this->poste = $poste;
 
         return $this;
     }
 
-    public function getEquipe(): ?int
+    /**
+     * Get equipe
+     *
+     * @return \App\Entity\Equipe $equipe
+     */
+    public function getEquipe()
     {
         return $this->equipe;
     }
 
-    public function setEquipe(?int $equipe): self
+    /**
+     * Set equipe
+     *
+     * @param \App\Entity\Equipe $equipe
+     *
+     * @return Joueur
+     */
+    public function setEquipe(Equipe $equipe = null)
     {
         $this->equipe = $equipe;
 

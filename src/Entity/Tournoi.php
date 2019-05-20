@@ -14,11 +14,6 @@ class Tournoi
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idTournoi;
 
     /**
@@ -36,21 +31,9 @@ class Tournoi
      */
     private $pays;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getIdTournoi(): ?int
     {
         return $this->idTournoi;
-    }
-
-    public function setIdTournoi(int $idTournoi): self
-    {
-        $this->idTournoi = $idTournoi;
-
-        return $this;
     }
 
     public function getNom(): ?string
@@ -77,12 +60,24 @@ class Tournoi
         return $this;
     }
 
-    public function getPays(): ?string
+    /**
+     * Get pays
+     *
+     * @return \App\Entity\Pays $pays
+     */
+    public function getPays()
     {
         return $this->pays;
     }
 
-    public function setPays(?string $pays): self
+    /**
+     * Set pays
+     *
+     * @param \App\Entity\Pays $pays
+     *
+     * @return Tournoi
+     */
+    public function setPays(Pays $pays)
     {
         $this->pays = $pays;
 

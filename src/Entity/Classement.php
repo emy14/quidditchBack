@@ -14,7 +14,7 @@ class Classement
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private $idClassement;
 
     /**
      * @ORM\Column(type="integer")
@@ -38,29 +38,53 @@ class Classement
      */
     private $rang;
 
-    public function getId(): ?int
+    public function getIdClassement(): ?int
     {
         return $this->id;
     }
 
-    public function getTournoi(): ?int
+    /**
+     * Get tournoi
+     *
+     * @return \App\Entity\Tournoi $tournoi
+     */
+    public function getTournoi()
     {
         return $this->tournoi;
     }
 
-    public function setTournoi(int $tournoi): self
+    /**
+     * Set tournoi
+     *
+     * @param \App\Entity\Tournoi $tournoi
+     *
+     * @return Classement
+     */
+    public function setTournoi(Tournoi $tournoi = null)
     {
         $this->tournoi = $tournoi;
 
         return $this;
     }
 
-    public function getEquipe(): ?int
+    /**
+     * Get equipe
+     *
+     * @return \App\Entity\Equipe $equipe
+     */
+    public function getEquipe()
     {
         return $this->equipe;
     }
 
-    public function setEquipe(int $equipe): self
+    /**
+     * Set equipe
+     *
+     * @param \App\Entity\Equipe $equipe
+     *
+     * @return Classement
+     */
+    public function setEquipe(Equipe $equipe = null)
     {
         $this->equipe = $equipe;
 

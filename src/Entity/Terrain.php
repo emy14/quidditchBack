@@ -14,11 +14,6 @@ class Terrain
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idTerrain;
 
     /**
@@ -31,21 +26,9 @@ class Terrain
      */
     private $lieu;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getIdTerrain(): ?int
     {
         return $this->idTerrain;
-    }
-
-    public function setIdTerrain(int $idTerrain): self
-    {
-        $this->idTerrain = $idTerrain;
-
-        return $this;
     }
 
     public function getNom(): ?string

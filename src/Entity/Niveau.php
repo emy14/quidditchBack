@@ -14,11 +14,6 @@ class Niveau
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idNiveau;
 
     /**
@@ -26,21 +21,9 @@ class Niveau
      */
     private $nom;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getIdNiveau(): ?int
     {
         return $this->idNiveau;
-    }
-
-    public function setIdNiveau(int $idNiveau): self
-    {
-        $this->idNiveau = $idNiveau;
-
-        return $this;
     }
 
     public function getNom(): ?string

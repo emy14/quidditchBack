@@ -3,18 +3,70 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Terrain;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 
-class TerrainController extends AbstractController {
+class TerrainController extends FOSRestController {
 
-  public function addAction(Request $request){
+  /**
+  * @Rest\Post("terrains")
+  */
+  public function postTerrain(Request $request) : View {
+
+    $terrain = new terrain();
+    $terrain->setNom($request->get('nom'));
+    $terrain->setLieu($request->get('lieu'));
+    $this->TerrainRepository->save($terrain);
+
+    return View::create($terrain, Response::HTTP_CREATED);
   }
 
-  public function editAction(Request $request, $id){
+  /**
+  * @Rest\Get("/terrains/{idTerrain}")
+  */
+  public function getTerrain(int $id) : View {
+
+    $terrain = $this->TerrainRepository->findById($id);
+    return View::create($terrain, Response::HTTP_OK);
   }
 
-  public function deleteAction(Request $request, $id){
+  /**
+  * @Rest\Get("/terrains")
+  */
+  public function getTerrains(): View {
+
+    $terrains = $this->TerrainRepository->findAll();
+    return View::create($terrains, Response::HTTP_OK);
+  }
+
+  /**
+  * @Rest\Put("/terrains/{idTerrain}")
+  */
+  public function putTerrain(Request $request, int $id) : View {
+
+    $terrain = $this->TerrainRepository->findById($id);
+
+    if ($terrain) {
+      $terrain->setNom($request->get('nom'));
+      $terrain->setLieu($request->get('lieu'));
+      $this->TerrainRepository->save($terrain);
+    }
+
+    return View::create($terrain, Response::HTTP_OK);
+  }
+
+  /**
+  * @Rest\Delete("/terrains/{idTerrain}")
+  */
+  public function deleteTerrain(int $id) : View {
+
+    $terrain = $this->TerrainRepository->findById($id);
+
+    if ($terrain) {
+      $this->TerrainRepository->delete($terrain);
+    }
+
+    return View::create([], Response::HTTP_NO_CONTENT);
   }
 
 }

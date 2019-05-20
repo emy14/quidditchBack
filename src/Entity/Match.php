@@ -14,11 +14,6 @@ class Match
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $idMatch;
 
     /**
@@ -64,23 +59,11 @@ class Match
      * @ORM\Column(type="integer", nullable=true)
      * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Equipe")
      */
-    private $DeuxiemeEquipe;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    private $deuxiemeEquipe;
 
     public function getIdMatch(): ?int
     {
         return $this->idMatch;
-    }
-
-    public function setIdMatch(int $idMatch): self
-    {
-        $this->idMatch = $idMatch;
-
-        return $this;
     }
 
     public function getScore(): ?int
@@ -119,62 +102,122 @@ class Match
         return $this;
     }
 
-    public function getArbitre(): ?int
+    /**
+     * Get arbitre
+     *
+     * @return \App\Entity\Utilisateur $arbitre
+     */
+    public function getArbitre()
     {
         return $this->arbitre;
     }
 
-    public function setArbitre(?int $arbitre): self
+    /**
+     * Set arbitre
+     *
+     * @param \App\Entity\Utilisateur $arbitre
+     *
+     * @return Match
+     */
+    public function setArbitre(Utilisateur $arbitre)
     {
         $this->arbitre = $arbitre;
 
         return $this;
     }
 
-    public function getNiveau(): ?int
+    /**
+     * Get niveau
+     *
+     * @return \App\Entity\Niveau $niveau
+     */
+    public function getNiveau()
     {
         return $this->niveau;
     }
 
-    public function setNiveau(?int $niveau): self
+    /**
+     * Set niveau
+     *
+     * @param \App\Entity\Niveau $niveau
+     *
+     * @return Match
+     */
+    public function setNiveau(Niveau $niveau = null)
     {
         $this->niveau = $niveau;
 
         return $this;
     }
 
-    public function getTerrain(): ?int
+    /**
+     * Get terrain
+     *
+     * @return \App\Entity\Terrain $terrain
+     */
+    public function getTerrain()
     {
         return $this->terrain;
     }
 
-    public function setTerrain(?int $terrain): self
+    /**
+     * Set terrain
+     *
+     * @param \App\Entity\Terrain $terrain
+     *
+     * @return Match
+     */
+    public function setTerrain(Terrain $terrain = null)
     {
         $this->terrain = $terrain;
 
         return $this;
     }
 
-    public function getPremiereEquipe(): ?int
+    /**
+     * Get equipe
+     *
+     * @return \App\Entity\Equipe $equipe
+     */
+    public function getPremiereEquipe()
     {
         return $this->premiereEquipe;
     }
 
-    public function setPremiereEquipe(?int $premiereEquipe): self
+    /**
+     * Set equipe
+     *
+     * @param \App\Entity\Equipe $equipe
+     *
+     * @return Match
+     */
+    public function setPremiereEquipe(Equipe $premiereEquipe = null)
     {
         $this->premiereEquipe = $premiereEquipe;
 
         return $this;
     }
 
-    public function getDeuxiemeEquipe(): ?int
+    /**
+     * Get equipe
+     *
+     * @return \App\Entity\Equipe $equipe
+     */
+    public function getDeuxiemeEquipe()
     {
-        return $this->DeuxiemeEquipe;
+        return $this->deuxiemeEquipe;
     }
 
-    public function setDeuxiemeEquipe(?int $DeuxiemeEquipe): self
+    /**
+     * Set equipe
+     *
+     * @param \App\Entity\Equipe $equipe
+     *
+     * @return Match
+     */
+    public function setDeuxiemeEquipe(Equipe $deuxiemeEquipe = null)
     {
-        $this->DeuxiemeEquipe = $DeuxiemeEquipe;
+        $this->deuxiemeEquipe = $deuxiemeEquipe;
 
         return $this;
     }

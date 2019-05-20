@@ -3,18 +3,72 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Tournoi;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 
-class TournoiController extends AbstractController {
+class TournoiController extends FOSRestController {
 
-  public function addAction(Request $request){
+  /**
+  * @Rest\Post("tournois")
+  */
+  public function postTournoi(Request $request) : View {
+
+    $tournoi = new tournoi();
+    $tournoi->setNom($request->get('nom'));
+    $tournoi->setDate($request->get('date'));
+    $tournoi->setPays($request->get('pays'));
+    $this->TournoiRepository->save($tournoi);
+
+    return View::create($tournoi, Response::HTTP_CREATED);
   }
 
-  public function editAction(Request $request, $id){
+  /**
+  * @Rest\Get("/tournois/{idTournoi}")
+  */
+  public function getTournoi(int $id) : View {
+
+    $tournoi = $this->TournoiRepository->findById($id);
+    return View::create($tournoi, Response::HTTP_OK);
   }
 
-  public function deleteAction(Request $request, $id){
+  /**
+  * @Rest\Get("/tournois")
+  */
+  public function getTournois(): View {
+
+    $tournois = $this->TournoiRepository->findAll();
+    return View::create($tournois, Response::HTTP_OK);
+  }
+
+  /**
+  * @Rest\Put("/tournois/{idTournoi}")
+  */
+  public function putTournoi(Request $request, int $id) : View {
+
+    $tournoi = $this->TournoiRepository->findById($id);
+
+    if ($tournoi) {
+      $tournoi->setNom($request->get('nom'));
+      $tournoi->setDate($request->get('date'));
+      $tournoi->setPays($request->get('pays'));
+      $this->TournoiRepository->save($tournoi);
+    }
+
+    return View::create($tournoi, Response::HTTP_OK);
+  }
+
+  /**
+  * @Rest\Delete("/tournois/{idTournoi}")
+  */
+  public function deleteTournoi(int $id) : View {
+
+    $tournoi = $this->TournoiRepository->findById($id);
+
+    if ($tournoi) {
+      $this->TournoiRepository->delete($tournoi);
+    }
+
+    return View::create([], Response::HTTP_NO_CONTENT);
   }
 
 }
