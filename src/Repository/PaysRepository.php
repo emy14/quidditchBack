@@ -32,4 +32,10 @@ class PaysRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Pays $pays)
+    {
+        $em->persist($pays);
+        $em->flush();
+    }
 }

@@ -53,6 +53,14 @@ class Utilisateur
         return $this;
     }
 
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+
     public function getRole(): ?string
     {
         return $this->role;

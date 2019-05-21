@@ -32,4 +32,10 @@ class NiveauRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Niveau $niveau)
+    {
+        $em->persist($niveau);
+        $em->flush();
+    }
 }

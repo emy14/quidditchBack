@@ -32,4 +32,10 @@ class MatchRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+    public function save($em, Match $match)
+    {
+        $em->persist($match);
+        $em->flush();
+    }
+
 }

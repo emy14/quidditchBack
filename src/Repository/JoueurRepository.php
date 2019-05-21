@@ -32,4 +32,10 @@ class JoueurRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Joueur $joueur)
+    {
+        $em->persist($joueur);
+        $em->flush();
+    }
 }

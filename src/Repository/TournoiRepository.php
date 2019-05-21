@@ -32,4 +32,10 @@ class TournoiRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Tournoi $tournoi)
+    {
+        $em->persist($tournoi);
+        $em->flush();
+    }
 }

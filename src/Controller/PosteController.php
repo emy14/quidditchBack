@@ -27,7 +27,7 @@ class PosteController extends AbstractFOSRestController {
 
     $poste = new poste();
     $poste->setNom($request->get('nom'));
-    $this->PosteRepository->save($poste);
+    $this->PosteRepository->save($this->getDoctrine()->getManager(), $poste);
 
     return $this->view($poste, Response::HTTP_CREATED);
 
@@ -60,7 +60,7 @@ class PosteController extends AbstractFOSRestController {
 
     if ($poste) {
       $poste->setNom($request->get('nom'));
-      $this->PosteRepository->save($poste);
+      $this->PosteRepository->save($this->getDoctrine()->getManager(), $poste);
     }
     return $this->view($poste, Response::HTTP_OK);
   }

@@ -32,4 +32,10 @@ class TerrainRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Terrain $terrain)
+    {
+        $em->persist($terrain);
+        $em->flush();
+    }
 }

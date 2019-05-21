@@ -34,7 +34,7 @@ class MatchController extends AbstractFOSRestController{
     $match->setTerrain($request->get('terrain'));
     $match->setPremiereEquipe($request->get('premiereEquipe'));
     $match->setDeuxiemeEquipe($request->get('deuxiemeEquipe'));
-    $this->MatchRepository->save($match);
+    $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
 
     return $this->view($match, Response::HTTP_CREATED);
   }
@@ -73,7 +73,7 @@ class MatchController extends AbstractFOSRestController{
       $match->setTerrain($request->get('terrain'));
       $match->setPremiereEquipe($request->get('premiereEquipe'));
       $match->setDeuxiemeEquipe($request->get('deuxiemeEquipe'));
-      $this->MatchRepository->save($match);
+      $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
     return $this->view($match, Response::HTTP_OK);

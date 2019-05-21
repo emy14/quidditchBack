@@ -27,7 +27,7 @@ class PaysController extends AbstractFOSRestController {
 
     $pays = new pays();
     $pays->setNom($request->get('nom'));
-    $this->PaysRepository->save($pays);
+    $this->PaysRepository->save($this->getDoctrine()->getManager(), $pays);
 
     return $this->view($pays, Response::HTTP_CREATED);
   }
@@ -59,7 +59,7 @@ class PaysController extends AbstractFOSRestController {
 
     if ($pays) {
       $pays->setNom($request->get('nom'));
-      $this->PaysRepository->save($pays);
+      $this->PaysRepository->save($this->getDoctrine()->getManager(), $pays);
     }
 
     return $this->view($pays, Response::HTTP_OK);

@@ -32,4 +32,10 @@ class ClassementRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Classement $classement)
+    {
+        $em->persist($classement);
+        $em->flush();
+    }
 }

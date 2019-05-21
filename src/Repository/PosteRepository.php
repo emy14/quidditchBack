@@ -32,4 +32,10 @@ class PosteRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Poste $poste)
+    {
+        $em->persist($poste);
+        $em->flush();
+    }
 }

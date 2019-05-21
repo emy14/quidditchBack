@@ -32,7 +32,7 @@ class JoueurController extends AbstractFOSRestController {
     $joueur->setAge($request->get('age'));
     $joueur->setPoste($request->get('poste'));
     $joueur->setEquipe($request->get('equipe'));
-    $this->JoueurRepository->save($joueur);
+    $this->JoueurRepository->save($this->getDoctrine()->getManager(), $joueur);
 
     return $this->view( $joueur, Response::HTTP_CREATED);
   }
@@ -69,7 +69,7 @@ class JoueurController extends AbstractFOSRestController {
       $joueur->setAge($request->get('age'));
       $joueur->setPoste($request->get('poste'));
       $joueur->setEquipe($request->get('equipe'));
-      $this->JoueurRepository->save($joueur);
+      $this->JoueurRepository->save($this->getDoctrine()->getManager(), $joueur);
     }
 
     return $this->view( $joueur, Response::HTTP_OK);

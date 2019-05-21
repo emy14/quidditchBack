@@ -32,4 +32,10 @@ class EquipeRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function save($em, Equipe $equipe)
+    {
+        $em->persist($equipe);
+        $em->flush();
+    }
 }

@@ -30,7 +30,7 @@ class TournoiController extends AbstractFOSRestController {
     $tournoi->setNom($request->get('nom'));
     $tournoi->setDate($request->get('date'));
     $tournoi->setPays($request->get('pays'));
-    $this->TournoiRepository->save($tournoi);
+    $this->TournoiRepository->save($this->getDoctrine()->getManager(), $tournoi);
 
     return $this->view($tournoi, Response::HTTP_CREATED);
   }
@@ -66,7 +66,7 @@ class TournoiController extends AbstractFOSRestController {
       $tournoi->setNom($request->get('nom'));
       $tournoi->setDate($request->get('date'));
       $tournoi->setPays($request->get('pays'));
-      $this->TournoiRepository->save($tournoi);
+      $this->TournoiRepository->save($this->getDoctrine()->getManager(), $tournoi);
     }
 
     return $this->view($tournoi, Response::HTTP_OK);

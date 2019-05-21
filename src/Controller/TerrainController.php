@@ -28,7 +28,7 @@ class TerrainController extends AbstractFOSRestController {
     $terrain = new terrain();
     $terrain->setNom($request->get('nom'));
     $terrain->setLieu($request->get('lieu'));
-    $this->TerrainRepository->save($terrain);
+    $this->TerrainRepository->save($this->getDoctrine()->getManager(), $terrain);
 
     return $this->view($terrain, Response::HTTP_CREATED);
   }
@@ -61,7 +61,7 @@ class TerrainController extends AbstractFOSRestController {
     if ($terrain) {
       $terrain->setNom($request->get('nom'));
       $terrain->setLieu($request->get('lieu'));
-      $this->TerrainRepository->save($terrain);
+      $this->TerrainRepository->save($this->getDoctrine()->getManager(), $terrain);
     }
 
 

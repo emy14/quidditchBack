@@ -20,22 +20,24 @@ class UtilisateurController extends AbstractFOSRestController   {
     $this->UtilisateurRepository = $articleRepository;
   }
 
-  /**
-   *
-  * @Rest\Post("utilisateurs")
-  */
-  public function loginUtilisateur(String $email, String $motDePasse)  {
-    $utilisateur = $this->UtilisateurRepository->findByUserLogin($email, $motDePasse);
+//  /**
+//   *
+//  * @Rest\Post("utilisateurs")
+//  */
+//  public function loginUtilisateur(String $email, String $motDePasse)  {
+//
+//    $utilisateur = $this->UtilisateurRepository->findByUserLogin($email, $motDePasse);
+//
+//    if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
+//      return $this->view($utilisateur, Response::HTTP_OK);
+//    } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
+//      header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
+//      return $this->view($utilisateur, Response::HTTP_OK);
+//    } else {
+//      return $this->view($utilisateur, Response::HTTP_NO_CONTENT);
+//    }
+//  }
 
-    if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
-      return $this->view($utilisateur, Response::HTTP_OK);
-    } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
-      header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
-      return $this->view($utilisateur, Response::HTTP_OK);
-    } else {
-      return $this->view($utilisateur, Response::HTTP_NO_CONTENT);
-    }
-  }
 
   /**
   * @Rest\Post("utilisateurs")
@@ -45,8 +47,9 @@ class UtilisateurController extends AbstractFOSRestController   {
     $utilisateur = new Utilisateur();
     $utilisateur->setNom($request->get('nom'));
     $utilisateur->setRole($request->get('role'));
+    $utilisateur->setEmail($request->get('email'));
     $utilisateur->setMotDePasse($request->get('motDePasse'));
-    $this->UtilisateurRepository->save($utilisateur);
+    $this->UtilisateurRepository->save($this->getDoctrine()->getManager(), $utilisateur);
 
     return $this->view($utilisateur, Response::HTTP_CREATED);
   }
@@ -80,7 +83,7 @@ class UtilisateurController extends AbstractFOSRestController   {
       $utilisateur->setNom($request->get('nom'));
       $utilisateur->setRole($request->get('role'));
       $utilisateur->setMotDePasse($request->get('motDePasse'));
-      $this->UtilisateurRepository->save($utilisateur);
+      $this->UtilisateurRepository->save($this->getDoctrine()->getManager(), $utilisateur);
     }
 
     return $this->view($utilisateur, Response::HTTP_OK);

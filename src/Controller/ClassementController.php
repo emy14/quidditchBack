@@ -30,7 +30,7 @@ class ClassementController extends AbstractFOSRestController {
     $classement->setEquipe($request->get('equipe'));
     $classement->setScore($request->get('score'));
     $classement->setRang($request->get('rang'));
-    $this->ClassementRepository->save($classement);
+    $this->ClassementRepository->save($this->getDoctrine()->getManager(), $classement);
 
    return $this->view( $classement, Response::HTTP_CREATED);
   }
@@ -65,7 +65,7 @@ class ClassementController extends AbstractFOSRestController {
       $classement->setEquipe($request->get('equipe'));
       $classement->setScore($request->get('score'));
       $classement->setRang($request->get('rang'));
-      $this->ClassementRepository->save($classement);
+      $this->ClassementRepository->save($this->getDoctrine()->getManager(), $classement);
     }
 
    return $this->view( $classement, Response::HTTP_OK);

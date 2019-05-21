@@ -27,7 +27,7 @@ class NiveauController extends AbstractFOSRestController {
 
     $niveau = new niveau();
     $niveau->setNom($request->get('nom'));
-    $this->NiveauRepository->save($niveau);
+    $this->NiveauRepository->save($this->getDoctrine()->getManager(), $niveau);
 
     return $this->view($niveau, Response::HTTP_CREATED);
   }
@@ -59,7 +59,7 @@ class NiveauController extends AbstractFOSRestController {
 
     if ($niveau) {
       $niveau->setNom($request->get('nom'));
-      $this->NiveauRepository->save($niveau);
+      $this->NiveauRepository->save($this->getDoctrine()->getManager(), $niveau);
     }
 
     return $this->view($niveau, Response::HTTP_OK);

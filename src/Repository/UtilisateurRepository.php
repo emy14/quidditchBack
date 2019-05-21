@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Utilisateur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Utilisateur[]    findAll()
@@ -34,6 +35,7 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
+
     public function findByUserLogin($email, $motDePasse)  {
         return $this->createQueryBuilder('u')
           ->andWhere('u.email = :email')
@@ -43,6 +45,12 @@ class UtilisateurRepository extends ServiceEntityRepository
           ->getQuery()
           ->getOneOrNullResult()
         ;
+    }
+
+    public function save($em, Utilisateur $customer)
+    {
+        $em->persist($customer);
+        $em->flush();
     }
 
 }

@@ -28,7 +28,7 @@ class EquipeController extends AbstractFOSRestController {
 
     $equipe = new equipe();
     $equipe->setNom($request->get('nom'));
-    $this->EquipeRepository->save($equipe);
+    $this->EquipeRepository->save($this->getDoctrine()->getManager(), $equipe);
 
     return $this->view( $equipe, Response::HTTP_CREATED);
   }
@@ -60,7 +60,7 @@ class EquipeController extends AbstractFOSRestController {
 
     if ($equipe) {
       $equipe->setNom($request->get('nom'));
-      $this->EquipeRepository->save($equipe);
+      $this->EquipeRepository->save($this->getDoctrine()->getManager(), $equipe);
     }
 
     return $this->view( $equipe, Response::HTTP_OK);
