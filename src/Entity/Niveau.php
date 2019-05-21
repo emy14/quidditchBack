@@ -12,7 +12,7 @@ class Niveau
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="idNiveau", type="integer")
      */
     private $idNiveau;
 

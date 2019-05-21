@@ -12,7 +12,7 @@ class Terrain
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="idTerrain", type="integer")
      */
     private $idTerrain;
 

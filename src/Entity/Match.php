@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MatchRepository")
+ * @ORM\Table(name="match_table")
  */
 class Match
 {
@@ -32,32 +33,32 @@ class Match
     private $date;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Utilisateur")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
+     * @ORM\JoinColumn(name="idUtilisateur", referencedColumnName="idUtilisateur")
      */
     private $arbitre;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Niveau")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Niveau")
+     * @ORM\JoinColumn(name="idNiveau", referencedColumnName="idNiveau")
      */
     private $niveau;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Terrain")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Terrain")
+     * @ORM\JoinColumn(name="idTerrain", referencedColumnName="idTerrain")
      */
     private $terrain;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Equipe")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
+     * @ORM\JoinColumn(name="idEquipe", referencedColumnName="idEquipe")
      */
     private $premiereEquipe;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Equipe")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
+     * @ORM\JoinColumn(name="idEquipe", referencedColumnName="idEquipe")
      */
     private $deuxiemeEquipe;
 

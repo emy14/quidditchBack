@@ -12,7 +12,7 @@ class Equipe
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="idEquipe", type="integer")
      */
     private $idEquipe;
 
