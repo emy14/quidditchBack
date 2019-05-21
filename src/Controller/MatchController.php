@@ -26,7 +26,8 @@ class MatchController extends AbstractFOSRestController{
   public function postMatch(Request $request)  {
 
     $match = new match();
-    $match->setScore($request->get('score'));
+    $match->setScoreDeuxiemeEquipe($request->get('scoreDeuxiemeEquipe'));
+    $match->setScorePremiereEquipe($request->get('scorePremiereEquipe'));
     $match->setTemps($request->get('temps'));
     $match->setDate($request->get('date'));
     $match->setArbitre($request->get('arbitre'));
@@ -69,7 +70,8 @@ class MatchController extends AbstractFOSRestController{
     $match = $this->MatchRepository->findByMatchId($id);
 
     if ($match) {
-      $match->setScore($request->get('score'));
+      $match->setScoreDeuxiemeEquipe($request->get('scoreDeuxiemeEquipe'));
+      $match->setScorePremiereEquipe($request->get('scorePremiereEquipe'));
       $match->setTemps($request->get('temps'));
       $match->setDate($request->get('date'));
       $match->setArbitre($request->get('arbitre'));

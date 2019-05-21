@@ -20,7 +20,12 @@ class Match
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $score;
+    private $scorePremiereEquipe;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $scoreDeuxiemeEquipe;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -34,31 +39,31 @@ class Match
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
-     * @ORM\JoinColumn(name="idUtilisateur", referencedColumnName="idUtilisateur")
+     * @ORM\JoinColumn(name="arbitre", referencedColumnName="idUtilisateur")
      */
     private $arbitre;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Niveau")
-     * @ORM\JoinColumn(name="idNiveau", referencedColumnName="idNiveau")
+     * @ORM\JoinColumn(name="niveau", referencedColumnName="idNiveau")
      */
     private $niveau;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Terrain")
-     * @ORM\JoinColumn(name="idTerrain", referencedColumnName="idTerrain")
+     * @ORM\JoinColumn(name="terrain", referencedColumnName="idTerrain")
      */
     private $terrain;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
-     * @ORM\JoinColumn(name="idEquipe", referencedColumnName="idEquipe")
+     * @ORM\JoinColumn(name="premiereEquipe", referencedColumnName="idEquipe")
      */
     private $premiereEquipe;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
-     * @ORM\JoinColumn(name="idEquipe", referencedColumnName="idEquipe")
+     * @ORM\JoinColumn(name="deuxiemeEquipe", referencedColumnName="idEquipe")
      */
     private $deuxiemeEquipe;
 
@@ -67,14 +72,26 @@ class Match
         return $this->idMatch;
     }
 
-    public function getScore(): ?int
+    public function getScorePremiereEquipe(): ?int
     {
-        return $this->score;
+        return $this->scorePremiereEquipe;
     }
 
-    public function setScore(?int $score): self
+    public function setScorePremiereEquipe(?int $score): self
     {
-        $this->score = $score;
+        $this->scorePremiereEquipe = $score;
+
+        return $this;
+    }
+
+    public function getScoreDeuxiemeEquipe(): ?int
+    {
+        return $this->scoreDeuxiemeEquipe;
+    }
+
+    public function setScoreDeuxiemeEquipe(?int $score): self
+    {
+        $this->scoreDeuxiemeEquipe = $score;
 
         return $this;
     }
