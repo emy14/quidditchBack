@@ -28,11 +28,12 @@ class UtilisateurController extends AbstractFOSRestController   {
     $utilisateur = $this->UtilisateurRepository->findByUserLogin($email, $motDePasse);
 
     if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
-      return View::create($utilisateur, Response::HTTP_OK);
-
+      return $this->view($utilisateur, Response::HTTP_OK);
     } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
       header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
-      return View::create($utilisateur, Response::HTTP_OK);
+      return $this->view($utilisateur, Response::HTTP_OK);
+    } else {
+      return $this->view($utilisateur, Response::HTTP_NO_CONTENT);
     }
   }
 
