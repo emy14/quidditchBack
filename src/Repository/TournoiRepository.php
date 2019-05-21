@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Tournoi|null find($id, $lockMode = null, $lockVersion = null)
- * @method Tournoi|null findOneBy(array $criteria, array $orderBy = null)
  * @method Tournoi[]    findAll()
- * @method Tournoi[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tournoi[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TournoiRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class TournoiRepository extends ServiceEntityRepository
         parent::__construct($registry, Tournoi::class);
     }
 
-    // /**
-    //  * @return Tournoi[] Returns an array of Tournoi objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Tournoi {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Tournoi
-    {
+    public function findById($id): ?Tournoi {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('t.IdTournoi = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

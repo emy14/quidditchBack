@@ -7,10 +7,9 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Utilisateur|null find($id, $lockMode = null, $lockVersion = null)
- * @method Utilisateur|null findOneBy(array $criteria, array $orderBy = null)
  * @method Utilisateur[]    findAll()
- * @method Utilisateur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Utilisateur[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Utilisateur[]    findByLogin()
  */
 class UtilisateurRepository extends ServiceEntityRepository
 {
@@ -19,32 +18,31 @@ class UtilisateurRepository extends ServiceEntityRepository
         parent::__construct($registry, Utilisateur::class);
     }
 
-    // /**
-    //  * @return Utilisateur[] Returns an array of Utilisateur objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Utilisateur {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Utilisateur
-    {
+    public function findById($id): ?Utilisateur {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('u.IdUtilisateur = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
+    public function findByLogin($email, $motDePasse): ?Utilisateur {
+        return $this->createQueryBuilder('u')
+          ->andWhere('u.email = :email')
+          ->andWhere('u.motDePasse = :motDePasse')
+          ->setParameter('email', $email)
+          ->setParameter('motDePasse', $motDePasse)
+          ->getQuery()
+          ->getOneOrNullResult()
+        ;
+    }
+
 }

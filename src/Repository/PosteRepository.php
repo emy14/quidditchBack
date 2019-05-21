@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Poste|null find($id, $lockMode = null, $lockVersion = null)
- * @method Poste|null findOneBy(array $criteria, array $orderBy = null)
  * @method Poste[]    findAll()
- * @method Poste[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Poste[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class PosteRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class PosteRepository extends ServiceEntityRepository
         parent::__construct($registry, Poste::class);
     }
 
-    // /**
-    //  * @return Poste[] Returns an array of Poste objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Poste {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Poste
-    {
+    public function findById($id): ?Poste {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('p.IdPoste = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

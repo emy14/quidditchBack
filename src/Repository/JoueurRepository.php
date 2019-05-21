@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Joueur|null find($id, $lockMode = null, $lockVersion = null)
- * @method Joueur|null findOneBy(array $criteria, array $orderBy = null)
  * @method Joueur[]    findAll()
- * @method Joueur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Joueur[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class JoueurRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class JoueurRepository extends ServiceEntityRepository
         parent::__construct($registry, Joueur::class);
     }
 
-    // /**
-    //  * @return Joueur[] Returns an array of Joueur objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Joueur {
         return $this->createQueryBuilder('j')
-            ->andWhere('j.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('j.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Joueur
-    {
+    public function findById($id): ?Joueur {
         return $this->createQueryBuilder('j')
-            ->andWhere('j.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('j.IdJoueur = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

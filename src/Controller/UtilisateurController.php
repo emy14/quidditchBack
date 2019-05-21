@@ -12,11 +12,27 @@ class UtilisateurController extends AbstractFOSRestController {
   /**
   * @Rest\Post("utilisateurs")
   */
+  public function loginUtilisateur(String $email, String $motDePasse) : View {
+    $utilisateur = $this->UtilisateurRepository->findByLogin($email, $motDePasse);
+
+    if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
+      return View::create($utilisateur, Response::HTTP_OK);
+
+    } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
+      header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
+      return View::create($utilisateur, Response::HTTP_OK);
+    }
+  }
+
+  /**
+  * @Rest\Post("utilisateurs")
+  */
   public function postUtilisateur(Request $request) : View {
 
     $utilisateur = new Utilisateur();
     $utilisateur->setNom($request->get('nom'));
     $utilisateur->setRole($request->get('role'));
+    $utilisateur->setMotDePasse($request->get('motDePasse'));
     $this->UtilisateurRepository->save($utilisateur);
 
     return View::create($utilisateur, Response::HTTP_CREATED);
@@ -50,6 +66,7 @@ class UtilisateurController extends AbstractFOSRestController {
     if ($utilisateur) {
       $utilisateur->setNom($request->get('nom'));
       $utilisateur->setRole($request->get('role'));
+      $utilisateur->setMotDePasse($request->get('motDePasse'));
       $this->UtilisateurRepository->save($utilisateur);
     }
 

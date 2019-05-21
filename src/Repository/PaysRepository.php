@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Pays|null find($id, $lockMode = null, $lockVersion = null)
- * @method Pays|null findOneBy(array $criteria, array $orderBy = null)
  * @method Pays[]    findAll()
- * @method Pays[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Pays[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class PaysRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class PaysRepository extends ServiceEntityRepository
         parent::__construct($registry, Pays::class);
     }
 
-    // /**
-    //  * @return Pays[] Returns an array of Pays objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+    public function findAll(): ?Pays {
+        return $this->createQueryBuilder('pa')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Pays
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+    public function findById($id): ?Pays {
+        return $this->createQueryBuilder('pa')
+            ->andWhere('pa.IdPays = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

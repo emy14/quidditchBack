@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Equipe|null find($id, $lockMode = null, $lockVersion = null)
- * @method Equipe|null findOneBy(array $criteria, array $orderBy = null)
  * @method Equipe[]    findAll()
- * @method Equipe[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Equipe[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class EquipeRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class EquipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Equipe::class);
     }
 
-    // /**
-    //  * @return Equipe[] Returns an array of Equipe objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Equipe {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Equipe
-    {
+    public function findById($id): ?Equipe {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('e.IdEquipe = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

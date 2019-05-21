@@ -7,10 +7,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Classement|null find($id, $lockMode = null, $lockVersion = null)
- * @method Classement|null findOneBy(array $criteria, array $orderBy = null)
  * @method Classement[]    findAll()
- * @method Classement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Classement[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class ClassementRepository extends ServiceEntityRepository
 {
@@ -19,32 +17,19 @@ class ClassementRepository extends ServiceEntityRepository
         parent::__construct($registry, Classement::class);
     }
 
-    // /**
-    //  * @return Classement[] Returns an array of Classement objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findAll(): ?Classement {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Classement
-    {
+    public function findById($id): ?Classement {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('c.IdEquipe = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
 }

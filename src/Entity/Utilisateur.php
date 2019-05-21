@@ -26,6 +26,16 @@ class Utilisateur
      */
     private $role;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $motDePasse;
+
   public function getIdUtilisateur(): ?int
     {
         return $this->idUtilisateur;
@@ -51,6 +61,23 @@ class Utilisateur
     public function setRole(?string $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function getMotDePasse(): ?string
+    {
+        return $this->$motDePasse;
+    }
+
+    public function setMotDePasse(?string $motDePasse): self
+    {
+        $this->motDePasse = $motDePasse;
 
         return $this;
     }
