@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Pays;
+use App\Repository\PaysRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;

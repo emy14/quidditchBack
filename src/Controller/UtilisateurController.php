@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Utilisateur;
+use App\Repository\UtilisateurRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,6 +22,8 @@ class UtilisateurController extends AbstractFOSRestController {
     } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
       header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
       return View::create($utilisateur, Response::HTTP_OK);
+    } else {
+      return View::create($utilisateur, Response::HTTP_NO_CONTENT);
     }
   }
 

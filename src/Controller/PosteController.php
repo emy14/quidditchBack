@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Poste;
+use App\Repository\PosteRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Niveau;
+use App\Repository\NiveauRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;

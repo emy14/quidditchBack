@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Quidditch\Entity\Equipe;
+use App\Repository\EquipeRepository;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
