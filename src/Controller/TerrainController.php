@@ -36,7 +36,9 @@ class TerrainController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/terrains/{idTerrain}")
   */
-  public function getTerrain(int $id)  {
+  public function getTerrain(Request $request)  {
+
+    $id = $request->get('idTerrain');
 
     $terrain = $this->TerrainRepository->findByTerrainId($id);
     return $this->view($terrain, Response::HTTP_OK);
@@ -56,7 +58,7 @@ class TerrainController extends AbstractFOSRestController {
   */
   public function putTerrain(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idTerrain');
 
     $terrain = $this->TerrainRepository->findByTerrainId($id);
 
@@ -75,7 +77,7 @@ class TerrainController extends AbstractFOSRestController {
   */
   public function deleteTerrain(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idTerrain');
 
     $terrain = $this->TerrainRepository->findByTerrainId($id);
 

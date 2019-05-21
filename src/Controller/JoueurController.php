@@ -40,7 +40,9 @@ class JoueurController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/joueurs/{idJoueur}")
   */
-  public function getJoueur(int $id)  {
+  public function getJoueur(Request $request)  {
+
+    $id = $request->get('idJoueur');
 
     $joueur = $this->JoueurRepository->findByJoueurId($id);
     return $this->view( $joueur, Response::HTTP_OK);
@@ -60,7 +62,7 @@ class JoueurController extends AbstractFOSRestController {
   */
   public function putJoueur(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idJoueur');
 
     $joueur = $this->JoueurRepository->findByJoueurId($id);
 
@@ -82,7 +84,7 @@ class JoueurController extends AbstractFOSRestController {
   */
   public function deleteJoueur(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idJoueur');
 
     $joueur = $this->JoueurRepository->findByJoueurId($id);
 

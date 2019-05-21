@@ -36,7 +36,9 @@ class PosteController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/postes/{idPoste}")
   */
-  public function getPoste(int $id)  {
+  public function getPoste(Request $request)  {
+
+    $id = $request->get('idPoste');
 
     $poste = $this->PosteRepository->findByPosteId($id);
     return $this->view($poste, Response::HTTP_OK);
@@ -56,7 +58,7 @@ class PosteController extends AbstractFOSRestController {
   */
   public function putPoste(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idPoste');
 
     $poste = $this->PosteRepository->findByPosteId($id);
 
@@ -72,7 +74,7 @@ class PosteController extends AbstractFOSRestController {
   */
   public function deletePoste(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idPoste');
 
     $poste = $this->PosteRepository->findByPosteId($id);
 

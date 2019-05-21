@@ -35,7 +35,9 @@ class NiveauController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/niveaux/{idNiveau}")
   */
-  public function getNiveau(int $id)  {
+  public function getNiveau(Request $request)  {
+
+    $id = $request->get('idNiveau');
 
     $niveau = $this->NiveauRepository->findByNiveauId($id);
     return $this->view($niveau, Response::HTTP_OK);
@@ -54,7 +56,7 @@ class NiveauController extends AbstractFOSRestController {
   * @Rest\Put("/niveaux/{idNiveau}")
   */
   public function putNiveau(Request $request) {
-    $id = $request->get('id');
+    $id = $request->get('idNiveau');
 
     $niveau = $this->NiveauRepository->findByNiveauId($id);
 
@@ -70,7 +72,7 @@ class NiveauController extends AbstractFOSRestController {
   * @Rest\Delete("/niveaux/{idNiveau}")
   */
   public function deleteNiveau(Request $request)  {
-    $id = $request->get('id');
+    $id = $request->get('idNiveau');
 
     $niveau = $this->NiveauRepository->findByNiveauId($id);
 

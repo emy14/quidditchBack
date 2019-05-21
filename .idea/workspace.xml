@@ -12,16 +12,6 @@
       <change beforePath="$PROJECT_DIR$/src/Controller/TerrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TerrainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TournoiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TournoiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClassementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClassementRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EquipeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EquipeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MatchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/NiveauRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NiveauRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PaysRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PaysRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PosteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PosteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TerrainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TerrainRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="77" column="72" selection-start-line="77" selection-start-column="72" selection-end-line="77" selection-end-column="72" />
+            <state relative-caret-position="175">
+              <caret line="39" column="13" selection-start-line="39" selection-end-line="40" />
               <folding>
                 <element signature="e#34#68#0#PHP" expanded="true" />
               </folding>
@@ -49,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
+            <state relative-caret-position="137">
+              <caret line="39" column="24" selection-start-line="39" selection-end-line="40" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
@@ -61,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="131">
+              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-end-line="47" />
               <folding>
                 <element signature="e#34#69#0#PHP" expanded="true" />
               </folding>
@@ -73,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/JoueurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="89" column="74" selection-start-line="89" selection-start-column="74" selection-end-line="89" selection-end-column="74" />
+            <state relative-caret-position="199">
+              <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-end-line="45" />
               <folding>
                 <element signature="e#34#70#0#PHP" expanded="true" />
               </folding>
@@ -85,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/EquipeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="80" column="74" selection-start-line="80" selection-start-column="74" selection-end-line="80" selection-end-column="74" />
+            <state relative-caret-position="141">
+              <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-end-line="41" />
               <folding>
                 <element signature="e#34#70#0#PHP" expanded="true" />
               </folding>
@@ -97,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/ClassementController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="85" column="78" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
+            <state relative-caret-position="357">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="e#34#74#0#PHP" expanded="true" />
               </folding>
@@ -109,15 +99,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="78" />
+            <state relative-caret-position="238">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="e#34#61#0#PHP" expanded="true" />
-                <marker date="1558441195968" expanded="true" signature="587:639" ph="..." />
-                <marker date="1558441195968" expanded="true" signature="642:1010" ph="..." />
-                <marker date="1558441195968" expanded="true" signature="642:1267" ph="..." />
-                <marker date="1558441195968" expanded="true" signature="1013:1108" ph="..." />
-                <marker date="1558441195968" expanded="true" signature="1172:1267" ph="..." />
+                <marker date="1558442203543" expanded="true" signature="587:639" ph="..." />
+                <marker date="1558442203543" expanded="true" signature="642:1010" ph="..." />
+                <marker date="1558442203543" expanded="true" signature="642:1267" ph="..." />
+                <marker date="1558442203543" expanded="true" signature="1013:1108" ph="..." />
+                <marker date="1558442203543" expanded="true" signature="1172:1267" ph="..." />
               </folding>
             </state>
           </provider>
@@ -126,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="85" column="75" selection-start-line="85" selection-start-column="75" selection-end-line="85" selection-end-column="75" />
+            <state relative-caret-position="165">
+              <caret line="41" column="28" selection-start-line="41" selection-end-line="42" />
               <folding>
                 <element signature="e#34#71#0#PHP" expanded="true" />
               </folding>
@@ -138,8 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+            <state relative-caret-position="192">
+              <caret line="40" column="20" selection-start-line="40" selection-end-line="41" />
               <folding>
                 <element signature="e#34#55#0#PHP" expanded="true" />
               </folding>
@@ -150,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="81" column="19" lean-forward="true" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+            <state relative-caret-position="175">
+              <caret line="40" column="31" selection-start-line="40" selection-end-line="41" />
               <folding>
                 <element signature="e#34#71#0#PHP" expanded="true" />
               </folding>
@@ -209,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/Entity/Utilisateur.php" />
         <option value="$PROJECT_DIR$/src/Repository/TournoiRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
         <option value="$PROJECT_DIR$/src/Repository/TerrainRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/PosteRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/PaysRepository.php" />
@@ -218,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/Repository/JoueurRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/EquipeRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/ClassementRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
         <option value="$PROJECT_DIR$/src/Controller/TournoiController.php" />
         <option value="$PROJECT_DIR$/src/Controller/TerrainController.php" />
         <option value="$PROJECT_DIR$/src/Controller/PosteController.php" />
@@ -450,12 +440,12 @@
       <workItem from="1558351895618" duration="3059000" />
       <workItem from="1558355479313" duration="2016000" />
       <workItem from="1558423224091" duration="7097000" />
-      <workItem from="1558435304194" duration="6292000" />
+      <workItem from="1558435304194" duration="6975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22613000" />
+    <option name="totallyTimeSpent" value="23296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -719,23 +709,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="78" />
+        <state relative-caret-position="238">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="e#34#61#0#PHP" expanded="true" />
-            <marker date="1558441195968" expanded="true" signature="587:639" ph="..." />
-            <marker date="1558441195968" expanded="true" signature="642:1010" ph="..." />
-            <marker date="1558441195968" expanded="true" signature="642:1267" ph="..." />
-            <marker date="1558441195968" expanded="true" signature="1013:1108" ph="..." />
-            <marker date="1558441195968" expanded="true" signature="1172:1267" ph="..." />
+            <marker date="1558442203543" expanded="true" signature="587:639" ph="..." />
+            <marker date="1558442203543" expanded="true" signature="642:1010" ph="..." />
+            <marker date="1558442203543" expanded="true" signature="642:1267" ph="..." />
+            <marker date="1558442203543" expanded="true" signature="1013:1108" ph="..." />
+            <marker date="1558442203543" expanded="true" signature="1172:1267" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="85" column="75" selection-start-line="85" selection-start-column="75" selection-end-line="85" selection-end-column="75" />
+        <state relative-caret-position="165">
+          <caret line="41" column="28" selection-start-line="41" selection-end-line="42" />
           <folding>
             <element signature="e#34#71#0#PHP" expanded="true" />
           </folding>
@@ -744,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="81" column="19" lean-forward="true" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+        <state relative-caret-position="175">
+          <caret line="40" column="31" selection-start-line="40" selection-end-line="41" />
           <folding>
             <element signature="e#34#71#0#PHP" expanded="true" />
           </folding>
@@ -754,8 +744,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+        <state relative-caret-position="192">
+          <caret line="40" column="20" selection-start-line="40" selection-end-line="41" />
           <folding>
             <element signature="e#34#55#0#PHP" expanded="true" />
           </folding>
@@ -764,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="77" column="72" selection-start-line="77" selection-start-column="72" selection-end-line="77" selection-end-column="72" />
+        <state relative-caret-position="175">
+          <caret line="39" column="13" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="e#34#68#0#PHP" expanded="true" />
           </folding>
@@ -774,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
+        <state relative-caret-position="137">
+          <caret line="39" column="24" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
@@ -784,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="131">
+          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-end-line="47" />
           <folding>
             <element signature="e#34#69#0#PHP" expanded="true" />
           </folding>
@@ -794,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/JoueurController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="89" column="74" selection-start-line="89" selection-start-column="74" selection-end-line="89" selection-end-column="74" />
+        <state relative-caret-position="199">
+          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-end-line="45" />
           <folding>
             <element signature="e#34#70#0#PHP" expanded="true" />
           </folding>
@@ -804,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EquipeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="80" column="74" selection-start-line="80" selection-start-column="74" selection-end-line="80" selection-end-column="74" />
+        <state relative-caret-position="141">
+          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-end-line="41" />
           <folding>
             <element signature="e#34#70#0#PHP" expanded="true" />
           </folding>
@@ -814,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ClassementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="85" column="78" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
+        <state relative-caret-position="357">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="e#34#74#0#PHP" expanded="true" />
           </folding>

@@ -42,7 +42,9 @@ class MatchController extends AbstractFOSRestController{
   /**
   * @Rest\Get("/matchs/{idMatch}")
   */
-  public function getMatch(int $id)  {
+  public function getMatch(Request $request)  {
+
+    $id = $request->get('idMatch');
 
     $match = $this->MatchRepository->findByMatchId($id);
     return $this->view($match, Response::HTTP_OK);
@@ -62,7 +64,7 @@ class MatchController extends AbstractFOSRestController{
   */
   public function putMatch(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idMatch');
 
     $match = $this->MatchRepository->findByMatchId($id);
 
@@ -85,7 +87,7 @@ class MatchController extends AbstractFOSRestController{
   * @Rest\Delete("/matchs/{idMatch}")
   */
   public function deleteMatch(Request $request)  {
-    $id = $request->get('id');
+    $id = $request->get('idMatch');
 
     $match = $this->MatchRepository->findByMatchId($id);
 

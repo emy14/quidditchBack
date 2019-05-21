@@ -35,7 +35,9 @@ class PaysController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/pays/{idPays}")
   */
-  public function getPays(int $id)  {
+  public function getPays(Request $request)  {
+
+    $id = $request->get('idPays');
 
     $pays = $this->PaysRepository->findById($id);
     return $this->view($pays, Response::HTTP_OK);
@@ -54,7 +56,7 @@ class PaysController extends AbstractFOSRestController {
   * @Rest\Put("/pays/{idPays}")
   */
   public function putPays(Request $request) {
-    $id = $request->get('id');
+    $id = $request->get('idPays');
 
     $pays = $this->PaysRepository->findById($id);
 
@@ -70,7 +72,7 @@ class PaysController extends AbstractFOSRestController {
   * @Rest\Delete("/pays/{idPays}")
   */
   public function deletePays(Request $request) {
-    $id = $request->get('id');
+    $id = $request->get('idPays');
 
     $pays = $this->PaysRepository->findById($id);
 

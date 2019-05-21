@@ -36,7 +36,9 @@ class EquipeController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/equipes/{idEquipe}")
   */
-  public function getEquipe(int $id)  {
+  public function getEquipe(Request $request)  {
+
+    $id = $request->get('idEquipe');
 
     $equipe = $this->EquipeRepository->findByEquipeId($id);
     return $this->view( $equipe, Response::HTTP_OK);
@@ -56,7 +58,7 @@ class EquipeController extends AbstractFOSRestController {
   */
   public function putEquipe(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idEquipe');
 
     $equipe = $this->EquipeRepository->findByEquipeId($id);
 
@@ -73,7 +75,7 @@ class EquipeController extends AbstractFOSRestController {
   */
   public function deleteEquipe(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idEquipe');
 
     $equipe = $this->EquipeRepository->findByEquipeId($id);
 

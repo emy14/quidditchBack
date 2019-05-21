@@ -38,7 +38,8 @@ class ClassementController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/classements/{idClassement}")
   */
-  public function getClassement(int $id)  {
+  public function getClassement(Request $request)  {
+    $id = $request->get('idClassement');
 
     $classement = $this->ClassementRepository->findByClassementId($id);
    return $this->view( $classement, Response::HTTP_OK);
@@ -58,7 +59,7 @@ class ClassementController extends AbstractFOSRestController {
   */
   public function putClassement(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idClassement');
 
     $classement = $this->ClassementRepository->findByClassementId($id);
 
@@ -78,7 +79,7 @@ class ClassementController extends AbstractFOSRestController {
   */
   public function deleteClassement(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idClassement');
 
     $classement = $this->ClassementRepository->findByClassementId($id);
 

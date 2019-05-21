@@ -38,7 +38,8 @@ class TournoiController extends AbstractFOSRestController {
   /**
   * @Rest\Get("/tournois/{idTournoi}")
   */
-  public function getTournoi(int $id)  {
+  public function getTournoi(Request $request)  {
+    $id = $request->get('idTournoi');
 
     $tournoi = $this->TournoiRepository->findByTournoiId($id);
     return $this->view($tournoi, Response::HTTP_OK);
@@ -59,7 +60,7 @@ class TournoiController extends AbstractFOSRestController {
   * @Rest\Put("/tournois/{idTournoi}")
   */
   public function putTournoi(Request $request)  {
-    $id = $request->get('id');
+    $id = $request->get('idTournoi');
 
     $tournoi = $this->TournoiRepository->findByTournoiId($id);
 
@@ -78,7 +79,7 @@ class TournoiController extends AbstractFOSRestController {
   */
   public function deleteTournoi(Request $request)  {
 
-    $id = $request->get('id');
+    $id = $request->get('idTournoi');
 
     $tournoi = $this->TournoiRepository->findByTournoiId($id);
 
