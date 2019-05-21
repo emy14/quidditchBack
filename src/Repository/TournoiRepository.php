@@ -17,14 +17,14 @@ class TournoiRepository extends ServiceEntityRepository
         parent::__construct($registry, Tournoi::class);
     }
 
-    public function findAll(): ?Tournoi {
+    public function findAllTournoi() {
         return $this->createQueryBuilder('t')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Tournoi {
+    public function findByTournoiId($id) {
         return $this->createQueryBuilder('t')
             ->andWhere('t.IdTournoi = :id')
             ->setParameter('id', $id)

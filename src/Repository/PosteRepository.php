@@ -17,14 +17,14 @@ class PosteRepository extends ServiceEntityRepository
         parent::__construct($registry, Poste::class);
     }
 
-    public function findAll(): ?Poste {
+    public function findAllPoste() {
         return $this->createQueryBuilder('p')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Poste {
+    public function findByPosteId($id) {
         return $this->createQueryBuilder('p')
             ->andWhere('p.IdPoste = :id')
             ->setParameter('id', $id)

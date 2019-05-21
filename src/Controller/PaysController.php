@@ -2,47 +2,58 @@
 
 namespace App\Controller;
 
-use Quidditch\Entity\Pays;
+use App\Repository\PaysRepository;
+use App\Entity\Pays;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class PaysController extends AbstractFOSRestController {
 
   /**
+   * @var PaysRepository
+   */
+  private $PaysRepository;
+
+  public function __construct(PaysRepository $paysRepository){
+    $this->PaysRepository = $paysRepository;
+  }
+
+  /**
   * @Rest\Post("pays")
   */
-  public function postPays(Request $request) : View {
+  public function postPays(Request $request) {
 
     $pays = new pays();
     $pays->setNom($request->get('nom'));
     $this->PaysRepository->save($pays);
 
-    return View::create($pays, Response::HTTP_CREATED);
+    return $this->view($pays, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/pays/{idPays}")
   */
-  public function getPays(int $id) : View {
+  public function getPays(int $id)  {
 
     $pays = $this->PaysRepository->findById($id);
-    return View::create($pays, Response::HTTP_OK);
+    return $this->view($pays, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/pays")
   */
-  public function getAllPays(): View {
+  public function getAllPays() {
 
     $pays = $this->PaysRepository->findAll();
-    return View::create($pays, Response::HTTP_OK);
+    return $this->view($pays, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/pays/{idPays}")
   */
-  public function putPays(Request $request, int $id) : View {
+  public function putPays(Request $request, int $id) {
 
     $pays = $this->PaysRepository->findById($id);
 
@@ -51,13 +62,13 @@ class PaysController extends AbstractFOSRestController {
       $this->PaysRepository->save($pays);
     }
 
-    return View::create($pays, Response::HTTP_OK);
+    return $this->view($pays, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/pays/{idPays}")
   */
-  public function deletePays(int $id) : View {
+  public function deletePays(int $id) {
 
     $pays = $this->PaysRepository->findById($id);
 
@@ -65,7 +76,7 @@ class PaysController extends AbstractFOSRestController {
       $this->PaysRepository->delete($pays);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

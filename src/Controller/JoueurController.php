@@ -2,17 +2,28 @@
 
 namespace App\Controller;
 
+use App\Repository\JoueurRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
-use Quidditch\Entity\Joueur;
+use App\Entity\Joueur;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class JoueurController extends AbstractFOSRestController {
 
   /**
+   * @var JoueurRepository
+   */
+  private $JoueurRepository;
+
+  public function __construct(JoueurRepository $joueurRepository){
+    $this->JoueurRepository = $joueurRepository;
+  }
+  
+  /**
   * @Rest\Post("joueurs")
   */
-  public function postJoueur(Request $request) : View {
+  public function postJoueur(Request $request)  {
 
     $joueur = new joueur();
     $joueur->setNom($request->get('nom'));
@@ -23,33 +34,33 @@ class JoueurController extends AbstractFOSRestController {
     $joueur->setEquipe($request->get('equipe'));
     $this->JoueurRepository->save($joueur);
 
-    return View::create($joueur, Response::HTTP_CREATED);
+    return $this->view( $joueur, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/joueurs/{idJoueur}")
   */
-  public function getJoueur(int $id) : View {
+  public function getJoueur(int $id)  {
 
-    $joueur = $this->JoueurRepository->findById($id);
-    return View::create($joueur, Response::HTTP_OK);
+    $joueur = $this->JoueurRepository->findByJoueurId($id);
+    return $this->view( $joueur, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/joueurs")
   */
-  public function getJoueurs(): View {
+  public function getJoueurs() {
 
-    $joueurs = $this->JoueurRepository->findAll();
-    return View::create($joueurs, Response::HTTP_OK);
+    $joueurs = $this->JoueurRepository->findAllJoueur();
+    return $this->view( $joueurs, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/joueurs/{idJoueur}")
   */
-  public function putJoueur(Request $request, int $id) : View {
+  public function putJoueur(Request $request, int $id)  {
 
-    $joueur = $this->JoueurRepository->findById($id);
+    $joueur = $this->JoueurRepository->findByJoueurId($id);
 
     if ($joueur) {
       $joueur->setNom($request->get('nom'));
@@ -61,21 +72,21 @@ class JoueurController extends AbstractFOSRestController {
       $this->JoueurRepository->save($joueur);
     }
 
-    return View::create($joueur, Response::HTTP_OK);
+    return $this->view( $joueur, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/joueurs/{idJoueur}")
   */
-  public function deleteJoueur(int $id) : View {
+  public function deleteJoueur(int $id)  {
 
-    $joueur = $this->JoueurRepository->findById($id);
+    $joueur = $this->JoueurRepository->findByJoueurId($id);
 
     if ($joueur) {
       $this->JoueurRepository->delete($joueur);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

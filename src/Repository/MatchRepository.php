@@ -17,14 +17,14 @@ class MatchRepository extends ServiceEntityRepository
         parent::__construct($registry, Match::class);
     }
 
-    public function findAll(): ?Match {
+    public function findAllMatch() {
         return $this->createQueryBuilder('m')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Match {
+    public function findByMatchId($id) {
         return $this->createQueryBuilder('m')
             ->andWhere('m.IdMatch = :id')
             ->setParameter('id', $id)

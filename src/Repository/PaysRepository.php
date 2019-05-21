@@ -17,14 +17,14 @@ class PaysRepository extends ServiceEntityRepository
         parent::__construct($registry, Pays::class);
     }
 
-    public function findAll(): ?Pays {
+    public function findAllPays() {
         return $this->createQueryBuilder('pa')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Pays {
+    public function findByPaysId($id) {
         return $this->createQueryBuilder('pa')
             ->andWhere('pa.IdPays = :id')
             ->setParameter('id', $id)

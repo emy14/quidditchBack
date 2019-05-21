@@ -17,14 +17,14 @@ class NiveauRepository extends ServiceEntityRepository
         parent::__construct($registry, Niveau::class);
     }
 
-    public function findAll(): ?Niveau {
+    public function findAllNiveau() {
         return $this->createQueryBuilder('n')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Niveau {
+    public function findByNiveauId($id) {
         return $this->createQueryBuilder('n')
             ->andWhere('n.IdNiveau = :id')
             ->setParameter('id', $id)

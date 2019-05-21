@@ -2,17 +2,28 @@
 
 namespace App\Controller;
 
-use Quidditch\Entity\Match;
+use App\Repository\MatchRepository;
+use App\Entity\Match;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MatchController extends AbstractFOSRestController{
 
   /**
+   * @var MatchRepository
+   */
+  private $MatchRepository;
+
+  public function __construct(MatchRepository $matchRepository){
+    $this->MatchRepository = $matchRepository;
+  }
+  
+  /**
   * @Rest\Post("matchs")
   */
-  public function postMatch(Request $request) : View {
+  public function postMatch(Request $request)  {
 
     $match = new match();
     $match->setScore($request->get('score'));
@@ -25,33 +36,33 @@ class MatchController extends AbstractFOSRestController{
     $match->setDeuxiemeEquipe($request->get('deuxiemeEquipe'));
     $this->MatchRepository->save($match);
 
-    return View::create($match, Response::HTTP_CREATED);
+    return $this->view($match, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/matchs/{idMatch}")
   */
-  public function getMatch(int $id) : View {
+  public function getMatch(int $id)  {
 
-    $match = $this->MatchRepository->findById($id);
-    return View::create($match, Response::HTTP_OK);
+    $match = $this->MatchRepository->findByMatchId($id);
+    return $this->view($match, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/matchs")
   */
-  public function getMatchs(): View {
+  public function getMatchs() {
 
-    $matchs = $this->MatchRepository->findAll();
-    return View::create($matchs, Response::HTTP_OK);
+    $matchs = $this->MatchRepository->findAllMatch();
+    return $this->view($matchs, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/matchs/{idMatch}")
   */
-  public function putMatch(Request $request, int $id) : View {
+  public function putMatch(Request $request, int $id)  {
 
-    $match = $this->MatchRepository->findById($id);
+    $match = $this->MatchRepository->findByMatchId($id);
 
     if ($match) {
       $match->setScore($request->get('score'));
@@ -65,21 +76,21 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($match);
     }
 
-    return View::create($match, Response::HTTP_OK);
+    return $this->view($match, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/matchs/{idMatch}")
   */
-  public function deleteMatch(int $id) : View {
+  public function deleteMatch(int $id)  {
 
-    $match = $this->MatchRepository->findById($id);
+    $match = $this->MatchRepository->findByMatchId($id);
 
     if ($match) {
       $this->MatchRepository->delete($match);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

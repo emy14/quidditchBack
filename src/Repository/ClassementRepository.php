@@ -17,14 +17,14 @@ class ClassementRepository extends ServiceEntityRepository
         parent::__construct($registry, Classement::class);
     }
 
-    public function findAll(): ?Classement {
+    public function findAllClassement() {
         return $this->createQueryBuilder('c')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Classement {
+    public function findByClassementId($id) {
         return $this->createQueryBuilder('c')
             ->andWhere('c.IdEquipe = :id')
             ->setParameter('id', $id)

@@ -17,14 +17,14 @@ class JoueurRepository extends ServiceEntityRepository
         parent::__construct($registry, Joueur::class);
     }
 
-    public function findAll(): ?Joueur {
+    public function findAllJoueur() {
         return $this->createQueryBuilder('j')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Joueur {
+    public function findByJoueurId($id) {
         return $this->createQueryBuilder('j')
             ->andWhere('j.IdJoueur = :id')
             ->setParameter('id', $id)

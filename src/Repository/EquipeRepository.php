@@ -17,14 +17,14 @@ class EquipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Equipe::class);
     }
 
-    public function findAll(): ?Equipe {
+    public function findAllEquipe() {
         return $this->createQueryBuilder('e')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Equipe {
+    public function findByEquipeId($id) {
         return $this->createQueryBuilder('e')
             ->andWhere('e.IdEquipe = :id')
             ->setParameter('id', $id)

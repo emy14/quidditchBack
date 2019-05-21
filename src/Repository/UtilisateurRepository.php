@@ -18,14 +18,14 @@ class UtilisateurRepository extends ServiceEntityRepository
         parent::__construct($registry, Utilisateur::class);
     }
 
-    public function findAll(): ?Utilisateur {
+    public function findAllUsers() {
         return $this->createQueryBuilder('u')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Utilisateur {
+    public function findByUserId($id) {
         return $this->createQueryBuilder('u')
             ->andWhere('u.IdUtilisateur = :id')
             ->setParameter('id', $id)
@@ -34,12 +34,12 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findByLogin($email, $motDePasse): ?Utilisateur {
+    public function findByUserLogin($email, $motDePasse)  {
         return $this->createQueryBuilder('u')
           ->andWhere('u.email = :email')
-          ->andWhere('u.motDePasse = :motDePasse')
+          ->andWhere('u.mot_de_passe = :mot_de_passe')
           ->setParameter('email', $email)
-          ->setParameter('motDePasse', $motDePasse)
+          ->setParameter('mot_de_passe', $motDePasse)
           ->getQuery()
           ->getOneOrNullResult()
         ;

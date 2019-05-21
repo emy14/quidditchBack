@@ -2,18 +2,28 @@
 
 namespace App\Controller;
 
-use Quidditch\Entity\Classement;
-use FOS\RestBundle\Controller\FOSRestController;
+use App\Repository\ClassementRepository;
+use App\Entity\Classement;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
+use Symfony\Component\HttpFoundation\Response;
 
 class ClassementController extends AbstractFOSRestController {
 
   /**
+   * @var ClassementRepository
+   */
+  private $ClassementRepository;
+
+  public function __construct(ClassementRepository $classementRepository){
+    $this->ClassementRepository = $classementRepository;
+  }
+  
+  /**
   * @Rest\Post("classements")
   */
-  public function postClassement(Request $request) : View {
+  public function postClassement(Request $request)  {
 
     $classement = new classement();
     $classement->setTournoi($request->get('tournoi'));
@@ -22,33 +32,33 @@ class ClassementController extends AbstractFOSRestController {
     $classement->setRang($request->get('rang'));
     $this->ClassementRepository->save($classement);
 
-    return View::create($classement, Response::HTTP_CREATED);
+   return $this->view( $classement, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/classements/{idClassement}")
   */
-  public function getClassement(int $id) : View {
+  public function getClassement(int $id)  {
 
-    $classement = $this->ClassementRepository->findById($id);
-    return View::create($classement, Response::HTTP_OK);
+    $classement = $this->ClassementRepository->findByClassementId($id);
+   return $this->view( $classement, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/classements")
   */
-  public function getClassements(): View {
+  public function getClassements() {
 
-    $classements = $this->ClassementRepository->findAll();
-    return View::create($classements, Response::HTTP_OK);
+    $classements = $this->ClassementRepository->findAllClassement();
+   return $this->view( $classements, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/classements/{idClassement}")
   */
-  public function putClassement(Request $request, int $id) : View {
+  public function putClassement(Request $request, int $id)  {
 
-    $classement = $this->ClassementRepository->findById($id);
+    $classement = $this->ClassementRepository->findByClassementId($id);
 
     if ($classement) {
       $classement->setTournoi($request->get('tournoi'));
@@ -58,21 +68,21 @@ class ClassementController extends AbstractFOSRestController {
       $this->ClassementRepository->save($classement);
     }
 
-    return View::create($classement, Response::HTTP_OK);
+   return $this->view( $classement, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/classements/{idClassement}")
   */
-  public function deleteClassement(int $id) : View {
+  public function deleteClassement(int $id)  {
 
-    $classement = $this->ClassementRepository->findById($id);
+    $classement = $this->ClassementRepository->findByClassementId($id);
 
     if ($classement) {
       $this->ClassementRepository->delete($classement);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

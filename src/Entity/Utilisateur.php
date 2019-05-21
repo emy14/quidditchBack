@@ -72,7 +72,7 @@ class Utilisateur
 
     public function getMotDePasse(): ?string
     {
-        return $this->$motDePasse;
+        return $this->motDePasse;
     }
 
     public function setMotDePasse(?string $motDePasse): self

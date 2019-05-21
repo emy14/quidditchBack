@@ -2,18 +2,30 @@
 
 namespace App\Controller;
 
-use Quidditch\Entity\Utilisateur;
+use App\Entity\Utilisateur;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\UtilisateurRepository;
+use Symfony\Component\HttpFoundation\Response;
 
-class UtilisateurController extends AbstractFOSRestController {
+class UtilisateurController extends AbstractFOSRestController   {
 
   /**
+   * @var UtilisateurRepository
+   */
+  private $UtilisateurRepository;
+
+  public function __construct(UtilisateurRepository $articleRepository){
+    $this->UtilisateurRepository = $articleRepository;
+  }
+
+  /**
+   *
   * @Rest\Post("utilisateurs")
   */
-  public function loginUtilisateur(String $email, String $motDePasse) : View {
-    $utilisateur = $this->UtilisateurRepository->findByLogin($email, $motDePasse);
+  public function loginUtilisateur(String $email, String $motDePasse)  {
+    $utilisateur = $this->UtilisateurRepository->findByUserLogin($email, $motDePasse);
 
     if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
       return View::create($utilisateur, Response::HTTP_OK);
@@ -27,7 +39,7 @@ class UtilisateurController extends AbstractFOSRestController {
   /**
   * @Rest\Post("utilisateurs")
   */
-  public function postUtilisateur(Request $request) : View {
+  public function postUtilisateur(Request $request)  {
 
     $utilisateur = new Utilisateur();
     $utilisateur->setNom($request->get('nom'));
@@ -35,33 +47,33 @@ class UtilisateurController extends AbstractFOSRestController {
     $utilisateur->setMotDePasse($request->get('motDePasse'));
     $this->UtilisateurRepository->save($utilisateur);
 
-    return View::create($utilisateur, Response::HTTP_CREATED);
+    return $this->view($utilisateur, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/utilisateurs/{IdUtilisateur}")
   */
-  public function getUtilisateur(int $id) : View {
+  public function getUtilisateur(int $id)  {
 
-    $utilisateur = $this->UtilisateurRepository->findById($id);
-    return View::create($utilisateur, Response::HTTP_OK);
+    $utilisateur = $this->UtilisateurRepository->findByUserId($id);
+    return $this->view($utilisateur, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/utilisateurs")
   */
-  public function getUtilisateurs(): View {
+  public function getUtilisateurs() {
 
-    $utilisateurs = $this->UtilisateurRepository->findAll();
-    return View::create($utilisateurs, Response::HTTP_OK);
+    $utilisateurs = $this->UtilisateurRepository->findAllUsers();
+    return $this->view($utilisateurs, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/utilisateurs/{IdUtilisateur}")
   */
-  public function putUtilisateur(Request $request, int $id) : View {
+  public function putUtilisateur(Request $request, int $id)  {
 
-    $utilisateur = $this->UtilisateurRepository->findById($id);
+    $utilisateur = $this->UtilisateurRepository->findByUserId($id);
 
     if ($utilisateur) {
       $utilisateur->setNom($request->get('nom'));
@@ -70,21 +82,21 @@ class UtilisateurController extends AbstractFOSRestController {
       $this->UtilisateurRepository->save($utilisateur);
     }
 
-    return View::create($utilisateur, Response::HTTP_OK);
+    return $this->view($utilisateur, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/utilisateurs/{IdUtilisateur}")
   */
-  public function deleteUtilisateur(int $id) : View {
+  public function deleteUtilisateur(int $id)  {
 
-    $utilisateur = $this->UtilisateurRepository->findById($id);
+    $utilisateur = $this->UtilisateurRepository->findByUserId($id);
 
     if ($utilisateur) {
       $this->UtilisateurRepository->delete($utilisateur);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

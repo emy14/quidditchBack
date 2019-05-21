@@ -2,70 +2,82 @@
 
 namespace App\Controller;
 
-use Quidditch\Entity\Equipe;
+use App\Repository\EquipeRepository;
+use App\Entity\Equipe;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
+use Symfony\Component\HttpFoundation\Response;
 
 class EquipeController extends AbstractFOSRestController {
 
   /**
+   * @var EquipeRepository
+   */
+  private $EquipeRepository;
+
+  public function __construct(EquipeRepository $equipeRepository){
+    $this->EquipeRepository = $equipeRepository;
+  }
+
+  
+  /**
   * @Rest\Post("equipes")
   */
-  public function postEquipe(Request $request) : View {
+  public function postEquipe(Request $request)  {
 
     $equipe = new equipe();
     $equipe->setNom($request->get('nom'));
     $this->EquipeRepository->save($equipe);
 
-    return View::create($equipe, Response::HTTP_CREATED);
+    return $this->view( $equipe, Response::HTTP_CREATED);
   }
 
   /**
   * @Rest\Get("/equipes/{idEquipe}")
   */
-  public function getEquipe(int $id) : View {
+  public function getEquipe(int $id)  {
 
-    $equipe = $this->EquipeRepository->findById($id);
-    return View::create($equipe, Response::HTTP_OK);
+    $equipe = $this->EquipeRepository->findByEquipeId($id);
+    return $this->view( $equipe, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Get("/equipes")
   */
-  public function getEquipes(): View {
+  public function getEquipes() {
 
-    $equipes = $this->EquipeRepository->findAll();
-    return View::create($equipes, Response::HTTP_OK);
+    $equipes = $this->EquipeRepository->findAllEquipe();
+    return $this->view( $equipes, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Put("/equipes/{idEquipe}")
   */
-  public function putEquipe(Request $request, int $id) : View {
+  public function putEquipe(Request $request, int $id)  {
 
-    $equipe = $this->EquipeRepository->findById($id);
+    $equipe = $this->EquipeRepository->findByEquipeId($id);
 
     if ($equipe) {
       $equipe->setNom($request->get('nom'));
       $this->EquipeRepository->save($equipe);
     }
 
-    return View::create($equipe, Response::HTTP_OK);
+    return $this->view( $equipe, Response::HTTP_OK);
   }
 
   /**
   * @Rest\Delete("/equipes/{idEquipe}")
   */
-  public function deleteEquipe(int $id) : View {
+  public function deleteEquipe(int $id)  {
 
-    $equipe = $this->EquipeRepository->findById($id);
+    $equipe = $this->EquipeRepository->findByEquipeId($id);
 
     if ($equipe) {
       $this->EquipeRepository->delete($equipe);
     }
 
-    return View::create([], Response::HTTP_NO_CONTENT);
+    return $this->view([], Response::HTTP_NO_CONTENT);
   }
 
 }

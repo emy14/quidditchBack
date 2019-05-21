@@ -17,14 +17,14 @@ class TerrainRepository extends ServiceEntityRepository
         parent::__construct($registry, Terrain::class);
     }
 
-    public function findAll(): ?Terrain {
+    public function findAllTerrain() {
         return $this->createQueryBuilder('te')
             ->getQuery()
             ->getResult()
         ;
     }
 
-    public function findById($id): ?Terrain {
+    public function findByTerrainId($id){
         return $this->createQueryBuilder('te')
             ->andWhere('te.IdTerrain = :id')
             ->setParameter('id', $id)

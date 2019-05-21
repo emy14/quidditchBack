@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce55ed23-7b81-4395-94f1-2ae1fa183816" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/fos_rest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/fos_rest.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClassementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClassementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EquipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EquipeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JoueurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
@@ -12,6 +15,18 @@
       <change beforePath="$PROJECT_DIR$/src/Controller/TerrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TerrainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TournoiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TournoiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Match.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClassementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClassementRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EquipeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EquipeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MatchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MatchRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/NiveauRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/NiveauRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PaysRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PaysRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PosteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PosteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TerrainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TerrainRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,22 +40,80 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ClassementController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="1173">
+              <caret line="78" column="26" selection-start-line="78" selection-end-line="79" />
               <folding>
-                <element signature="e#34#66#0#PHP" expanded="true" />
+                <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/EquipeController.php">
+        <entry file="file://$PROJECT_DIR$/src/Repository/PaysRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="289">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Tournoi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-906" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Terrain.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/MatchRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Match.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Pays.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Joueur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2232" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1056">
+              <caret line="96" selection-start-line="96" selection-end-line="98" />
+              <folding>
+                <element signature="e#34#69#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,76 +121,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/JoueurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="199">
+              <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+              <folding>
+                <element signature="e#34#70#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>equipeRepository</find>
+      <find>: View</find>
+      <find>matchRepository</find>
+      <find>joueurRepository</find>
+      <find>return View::create(</find>
+      <find>return View::create(</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>classementRepository</replace>
+      <replace>joueurRepository</replace>
+      <replace>equipeRepository</replace>
+      <replace>return $this-&gt;view(</replace>
+      <replace>return $this-&gt;view(</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,22 +159,35 @@
         <option value="$PROJECT_DIR$/Quidditch/config/routes.yaml" />
         <option value="$PROJECT_DIR$/Quidditch/src/Controller/EssaiController.php" />
         <option value="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" />
-        <option value="$PROJECT_DIR$/config/packages/fos_rest.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/EssaiController.php" />
         <option value="$PROJECT_DIR$/config/routes/annotations.yaml" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/Rest/EssaiController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/JoueurController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ClassementController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/EquipeController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/MatchController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/NiveauController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/PaysController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/PosteController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/TerrainController.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/config/packages/fos_rest.yaml" />
+        <option value="$PROJECT_DIR$/src/Repository/TournoiRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/TournoiController.php" />
         <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/TerrainRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TerrainController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/PosteRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PosteController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/PaysRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/NiveauRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/MatchRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/JoueurRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/EquipeRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/ClassementRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PaysController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/NiveauController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ClassementController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/EquipeController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/JoueurController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/MatchController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Match.php" />
       </list>
     </option>
   </component>
@@ -253,11 +296,11 @@
       <path value="$PROJECT_DIR$/Quidditch/vendor/symfony/apache-pack" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="37" />
-    <option name="y" value="6" />
-    <option name="width" value="1873" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="781" />
+    <option name="y" value="15" />
+    <option name="width" value="1145" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -309,6 +352,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -353,17 +408,19 @@
       <workItem from="1558349981832" duration="743000" />
       <workItem from="1558351895618" duration="3059000" />
       <workItem from="1558355479313" duration="2016000" />
+      <workItem from="1558423224091" duration="7097000" />
+      <workItem from="1558435304194" duration="933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8372000" />
+    <option name="totallyTimeSpent" value="17254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41409397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23691276" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -388,21 +445,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Quidditch/.env.test" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/.env" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/bin/console" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/bin/phpunit" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/public/index.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/bundles.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/templates/essai/index.html.twig" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/templates/base.html.twig" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/services.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/dev/web_profiler.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/dev/twig.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/bootstrap.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/annotations.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/src/Controller/EssaiController.php" />
     <entry file="file://$PROJECT_DIR$/config/routes/dev/web_profiler.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -428,10 +470,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Niveau.php" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/Match.php" />
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -461,22 +499,12 @@
     <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/fos_rest.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Rest/EssaiController.php" />
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
@@ -486,76 +514,239 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Equipe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/fos_rest.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TournoiRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="e#34#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TerrainRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UtilisateurRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding>
+            <element signature="e#34#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="21" selection-end-column="3" />
+          <folding>
+            <element signature="e#34#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" selection-start-line="13" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="e#34#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/NiveauRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/JoueurRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/EquipeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ClassementRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/PosteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="e#34#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ClassementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="199">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding>
-            <element signature="e#34#66#0#PHP" expanded="true" />
+            <element signature="e#34#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EquipeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="199">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#34#70#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/JoueurController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+        <state relative-caret-position="199">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+          <folding>
+            <element signature="e#34#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Tournoi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-906" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Terrain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Pays.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Joueur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="78" column="26" selection-start-line="78" selection-end-line="79" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="1056">
+          <caret line="96" selection-start-line="96" selection-end-line="98" />
+          <folding>
+            <element signature="e#34#69#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/PaysRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="289">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/MatchRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="408">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Match.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="272">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="32" />
         </state>
       </provider>
     </entry>
