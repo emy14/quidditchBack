@@ -38,4 +38,10 @@ class MatchRepository extends ServiceEntityRepository
         $em->flush();
     }
 
+    public function delete($em, Match $match)
+    {
+        $em->remove($match);
+        $em->flush();
+    }
+
 }

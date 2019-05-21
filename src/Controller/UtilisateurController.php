@@ -75,7 +75,9 @@ class UtilisateurController extends AbstractFOSRestController   {
   /**
   * @Rest\Put("/utilisateurs/{IdUtilisateur}")
   */
-  public function putUtilisateur(Request $request, int $id)  {
+  public function putUtilisateur(Request $request)  {
+
+    $id = $request->get('id');
 
     $utilisateur = $this->UtilisateurRepository->findByUserId($id);
 
@@ -92,12 +94,14 @@ class UtilisateurController extends AbstractFOSRestController   {
   /**
   * @Rest\Delete("/utilisateurs/{IdUtilisateur}")
   */
-  public function deleteUtilisateur(int $id)  {
+  public function deleteUtilisateur(Request $request)  {
+
+    $id = $request->get('id');
 
     $utilisateur = $this->UtilisateurRepository->findByUserId($id);
 
     if ($utilisateur) {
-      $this->UtilisateurRepository->delete($utilisateur);
+      $this->UtilisateurRepository->delete($this->getDoctrine()->getManager(), $utilisateur);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

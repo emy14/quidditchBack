@@ -38,4 +38,10 @@ class EquipeRepository extends ServiceEntityRepository
         $em->persist($equipe);
         $em->flush();
     }
+
+    public function delete($em, Equipe $equipe)
+    {
+        $em->remove($equipe);
+        $em->flush();
+    }
 }

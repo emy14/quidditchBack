@@ -58,7 +58,9 @@ class JoueurController extends AbstractFOSRestController {
   /**
   * @Rest\Put("/joueurs/{idJoueur}")
   */
-  public function putJoueur(Request $request, int $id)  {
+  public function putJoueur(Request $request)  {
+
+    $id = $request->get('id');
 
     $joueur = $this->JoueurRepository->findByJoueurId($id);
 
@@ -78,12 +80,14 @@ class JoueurController extends AbstractFOSRestController {
   /**
   * @Rest\Delete("/joueurs/{idJoueur}")
   */
-  public function deleteJoueur(int $id)  {
+  public function deleteJoueur(Request $request)  {
+
+    $id = $request->get('id');
 
     $joueur = $this->JoueurRepository->findByJoueurId($id);
 
     if ($joueur) {
-      $this->JoueurRepository->delete($joueur);
+      $this->JoueurRepository->delete($this->getDoctrine()->getManager(), $joueur);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

@@ -38,4 +38,10 @@ class TournoiRepository extends ServiceEntityRepository
         $em->persist($tournoi);
         $em->flush();
     }
+
+    public function delete($em, Tournoi $tournoi)
+    {
+        $em->remove($tournoi);
+        $em->flush();
+    }
 }

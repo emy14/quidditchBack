@@ -54,7 +54,9 @@ class TerrainController extends AbstractFOSRestController {
   /**
   * @Rest\Put("/terrains/{idTerrain}")
   */
-  public function putTerrain(Request $request, int $id)  {
+  public function putTerrain(Request $request)  {
+
+    $id = $request->get('id');
 
     $terrain = $this->TerrainRepository->findByTerrainId($id);
 
@@ -71,12 +73,14 @@ class TerrainController extends AbstractFOSRestController {
   /**
   * @Rest\Delete("/terrains/{idTerrain}")
   */
-  public function deleteTerrain(int $id)  {
+  public function deleteTerrain(Request $request)  {
+
+    $id = $request->get('id');
 
     $terrain = $this->TerrainRepository->findByTerrainId($id);
 
     if ($terrain) {
-      $this->TerrainRepository->delete($terrain);
+      $this->TerrainRepository->delete($this->getDoctrine()->getManager(), $terrain);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

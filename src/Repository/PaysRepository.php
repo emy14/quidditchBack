@@ -38,4 +38,10 @@ class PaysRepository extends ServiceEntityRepository
         $em->persist($pays);
         $em->flush();
     }
+
+    public function delete($em, Pays $pays)
+    {
+        $em->remove($pays);
+        $em->flush();
+    }
 }

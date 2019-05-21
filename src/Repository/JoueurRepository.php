@@ -38,4 +38,10 @@ class JoueurRepository extends ServiceEntityRepository
         $em->persist($joueur);
         $em->flush();
     }
+
+    public function delete($em, Joueur $joueur)
+    {
+        $em->remove($joueur);
+        $em->flush();
+    }
 }

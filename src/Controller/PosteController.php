@@ -54,7 +54,9 @@ class PosteController extends AbstractFOSRestController {
   /**
   * @Rest\Put("/postes/{idPoste}")
   */
-  public function putPoste(Request $request, int $id)  {
+  public function putPoste(Request $request)  {
+
+    $id = $request->get('id');
 
     $poste = $this->PosteRepository->findByPosteId($id);
 
@@ -68,12 +70,14 @@ class PosteController extends AbstractFOSRestController {
   /**
   * @Rest\Delete("/postes/{idPoste}")
   */
-  public function deletePoste(int $id)  {
+  public function deletePoste(Request $request)  {
+
+    $id = $request->get('id');
 
     $poste = $this->PosteRepository->findByPosteId($id);
 
     if ($poste) {
-      $this->PosteRepository->delete($poste);
+      $this->PosteRepository->delete($this->getDoctrine()->getManager(), $poste);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

@@ -26,9 +26,9 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findByUserId($id) {
+    public function findByUserId($id)  {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.IdUtilisateur = :id')
+            ->andWhere('u.idUtilisateur = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
@@ -53,4 +53,9 @@ class UtilisateurRepository extends ServiceEntityRepository
         $em->flush();
     }
 
+    public function delete($em, Utilisateur $customer)
+    {
+        $em->remove($customer);
+        $em->flush();
+    }
 }

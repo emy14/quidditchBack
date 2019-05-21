@@ -53,7 +53,8 @@ class NiveauController extends AbstractFOSRestController {
   /**
   * @Rest\Put("/niveaux/{idNiveau}")
   */
-  public function putNiveau(Request $request, int $id) {
+  public function putNiveau(Request $request) {
+    $id = $request->get('id');
 
     $niveau = $this->NiveauRepository->findByNiveauId($id);
 
@@ -68,12 +69,13 @@ class NiveauController extends AbstractFOSRestController {
   /**
   * @Rest\Delete("/niveaux/{idNiveau}")
   */
-  public function deleteNiveau(int $id)  {
+  public function deleteNiveau(Request $request)  {
+    $id = $request->get('id');
 
     $niveau = $this->NiveauRepository->findByNiveauId($id);
 
     if ($niveau) {
-      $this->NiveauRepository->delete($niveau);
+      $this->NiveauRepository->delete($this->getDoctrine()->getManager(), $niveau);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

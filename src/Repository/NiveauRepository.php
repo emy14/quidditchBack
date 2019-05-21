@@ -38,4 +38,10 @@ class NiveauRepository extends ServiceEntityRepository
         $em->persist($niveau);
         $em->flush();
     }
+
+    public function delete($em, Niveau $niveau)
+    {
+        $em->remove($niveau);
+        $em->flush();
+    }
 }

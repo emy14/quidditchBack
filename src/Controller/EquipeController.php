@@ -54,7 +54,9 @@ class EquipeController extends AbstractFOSRestController {
   /**
   * @Rest\Put("/equipes/{idEquipe}")
   */
-  public function putEquipe(Request $request, int $id)  {
+  public function putEquipe(Request $request)  {
+
+    $id = $request->get('id');
 
     $equipe = $this->EquipeRepository->findByEquipeId($id);
 
@@ -69,12 +71,14 @@ class EquipeController extends AbstractFOSRestController {
   /**
   * @Rest\Delete("/equipes/{idEquipe}")
   */
-  public function deleteEquipe(int $id)  {
+  public function deleteEquipe(Request $request)  {
+
+    $id = $request->get('id');
 
     $equipe = $this->EquipeRepository->findByEquipeId($id);
 
     if ($equipe) {
-      $this->EquipeRepository->delete($equipe);
+      $this->EquipeRepository->delete($this->getDoctrine()->getManager(), $equipe);
     }
 
     return $this->view([], Response::HTTP_NO_CONTENT);

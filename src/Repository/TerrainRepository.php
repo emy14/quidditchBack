@@ -38,4 +38,10 @@ class TerrainRepository extends ServiceEntityRepository
         $em->persist($terrain);
         $em->flush();
     }
+
+    public function delete($em, Terrain $terrain)
+    {
+        $em->remove($terrain);
+        $em->flush();
+    }
 }

@@ -38,4 +38,10 @@ class ClassementRepository extends ServiceEntityRepository
         $em->persist($classement);
         $em->flush();
     }
+
+    public function delete($em, Classement $classement)
+    {
+        $em->remove($classement);
+        $em->flush();
+    }
 }

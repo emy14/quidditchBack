@@ -38,4 +38,10 @@ class PosteRepository extends ServiceEntityRepository
         $em->persist($poste);
         $em->flush();
     }
+
+    public function delete($em, Poste $poste)
+    {
+        $em->remove($poste);
+        $em->flush();
+    }
 }
