@@ -35,7 +35,12 @@ class Match
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $date;
+    private $date_debut;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $date_fin;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
@@ -115,14 +120,26 @@ class Match
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDateDebut(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->date_debut;
     }
 
-    public function setDate(?\DateTimeInterface $date): self
+    public function setDateDebut(?\DateTimeInterface $date): self
     {
-        $this->date = $date;
+        $this->date_debut = $date;
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->date_fin;
+    }
+
+    public function setDateFin(?\DateTimeInterface $date): self
+    {
+        $this->date_fin = $date;
 
         return $this;
     }
