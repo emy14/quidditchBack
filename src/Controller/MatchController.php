@@ -52,7 +52,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-  * @Rest\Get("/matchs/arbitre{arbitre}")
+  * @Rest\Get("/matchs/arbitre/{arbitre}")
   */
   public function getMatchsParArbitre(Request $request)  {
 
