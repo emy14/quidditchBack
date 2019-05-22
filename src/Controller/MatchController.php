@@ -97,6 +97,24 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
+   * @Rest\Put("/matchs/score/{idMatch}")
+   */
+  public function putMatchScore(Request $request)  {
+
+    $id = $request->get('idMatch');
+
+    $match = $this->MatchRepository->findByMatchId($id);
+
+    if ($match) {
+      $match->setScoreDeuxiemeEquipe($request->get('scoreDeuxiemeEquipe'));
+      $match->setScorePremiereEquipe($request->get('scorePremiereEquipe'));
+      $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
+    }
+
+    return $this->view($match, Response::HTTP_OK);
+  }
+
+  /**
   * @Rest\Delete("/matchs/{idMatch}")
   */
   public function deleteMatch(Request $request)  {

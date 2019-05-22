@@ -39,8 +39,7 @@ class MatchRepository extends ServiceEntityRepository
           ->andWhere('m.arbitre = :arbitre')
           ->setParameter('arbitre', $arbitre)
           ->getQuery()
-          ->getResult()
-      ;
+          ->getResult();
     }
 
     public function save($em, Match $match)
