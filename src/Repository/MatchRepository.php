@@ -26,7 +26,7 @@ class MatchRepository extends ServiceEntityRepository
 
     public function findByMatchId($id) {
         return $this->createQueryBuilder('m')
-            ->andWhere('m.IdMatch = :id')
+            ->andWhere('m.idMatch = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
