@@ -63,6 +63,17 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
+   * @Rest\Get("/matchs/tournoi/{arbitre}")
+   */
+  public function getMatchsParTournoi(Request $request)  {
+
+    $tournoi = $request->get('arbitre');
+
+    $matchs = $this->MatchRepository->findMatchsByTournoi($tournoi);
+    return $this->view($matchs, Response::HTTP_OK);
+  }
+
+  /**
   * @Rest\Get("/matchs")
   */
   public function getMatchs() {

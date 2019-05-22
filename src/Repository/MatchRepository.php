@@ -42,6 +42,14 @@ class MatchRepository extends ServiceEntityRepository
           ->getResult();
     }
 
+    public function findMatchsByTournoi($tournoi) {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.tournoi = :tournoi')
+            ->setParameter('tournoi', $tournoi)
+            ->getQuery()
+            ->getResult();
+    }
+
     public function save($em, Match $match)
     {
         $em->persist($match);

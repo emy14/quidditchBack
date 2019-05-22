@@ -12,7 +12,7 @@ class Tournoi
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="idTournoi", type="integer")
      */
     private $idTournoi;
 

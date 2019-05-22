@@ -67,6 +67,13 @@ class Match
      */
     private $deuxiemeEquipe;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tournoi")
+     * @ORM\JoinColumn(name="tournoi", referencedColumnName="idTournoi")
+     */
+    private $tournoi;
+
+
     public function getIdMatch(): ?int
     {
         return $this->idMatch;
@@ -236,6 +243,30 @@ class Match
     public function setDeuxiemeEquipe(Equipe $deuxiemeEquipe = null)
     {
         $this->deuxiemeEquipe = $deuxiemeEquipe;
+
+        return $this;
+    }
+
+    /**
+     * Get tournoi
+     *
+     * @return \App\Entity\Tournoi $tournoi
+     */
+    public function getTournoi()
+    {
+        return $this->tournoi;
+    }
+
+    /**
+     * Set tournoi
+     *
+     * @param \App\Entity\Terrain $terrain
+     *
+     * @return Match
+     */
+    public function setTournoi(Tournoi $tournoi = null)
+    {
+        $this->tournoi = $tournoi;
 
         return $this;
     }
