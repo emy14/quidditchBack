@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
 /**
  * @method Match[]    findAll()
  * @method Match[]    findById(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Match[]    findMatchsByArbitre()
  */
 class MatchRepository extends ServiceEntityRepository
 {
@@ -32,6 +33,16 @@ class MatchRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function findMatchsByArbitre($arbitre) {
+      return $this->createQueryBuilder('m')
+          ->andWhere('m.arbitre = :arbitre')
+          ->setParameter('arbitre', $arbitre)
+          ->getQuery()
+          ->getResult()
+      ;
+    }
+
     public function save($em, Match $match)
     {
         $em->persist($match);
