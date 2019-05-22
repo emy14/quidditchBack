@@ -19,7 +19,7 @@ class MatchController extends AbstractFOSRestController{
   public function __construct(MatchRepository $matchRepository){
     $this->MatchRepository = $matchRepository;
   }
-  
+
   /**
   * @Rest\Post("matchs")
   */
@@ -49,6 +49,17 @@ class MatchController extends AbstractFOSRestController{
 
     $match = $this->MatchRepository->findByMatchId($id);
     return $this->view($match, Response::HTTP_OK);
+  }
+
+  /**
+  * @Rest\Get("/matchs/arbitre{arbitre}")
+  */
+  public function getMatchsParArbitre(Request $request)  {
+
+    $arbitre = $request->get('arbitre');
+
+    $matchs = $this->MatchRepository->findMatchsByArbitre($arbitre);
+    return $this->view($matchs, Response::HTTP_OK);
   }
 
   /**
