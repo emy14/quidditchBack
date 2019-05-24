@@ -24,7 +24,7 @@ class Role
 
     public function getIdRole(): ?int
     {
-        return $this->id;
+        return $this->idRole;
     }
 
     public function getName(): ?string

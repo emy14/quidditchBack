@@ -26,6 +26,15 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findAllArbitres() {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.role =', 1)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
     public function findByUserId($id)  {
         return $this->createQueryBuilder('u')
             ->andWhere('u.idUtilisateur = :id')

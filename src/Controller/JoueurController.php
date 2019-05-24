@@ -27,7 +27,6 @@ class JoueurController extends AbstractFOSRestController {
 
     $joueur = new joueur();
     $joueur->setNom($request->get('nom'));
-    $joueur->setPrenom($request->get('prenom'));
     $joueur->setNationalite($request->get('nationalite'));
     $joueur->setAge($request->get('age'));
     $joueur->setPoste($request->get('poste'));
@@ -68,7 +67,6 @@ class JoueurController extends AbstractFOSRestController {
 
     if ($joueur) {
       $joueur->setNom($request->get('nom'));
-      $joueur->setPrenom($request->get('prenom'));
       $joueur->setNationalite($request->get('nationalite'));
       $joueur->setAge($request->get('age'));
       $joueur->setPoste($request->get('poste'));

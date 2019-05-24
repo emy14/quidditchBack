@@ -74,6 +74,16 @@ class UtilisateurController extends AbstractFOSRestController   {
     return $this->view($utilisateurs, Response::HTTP_OK);
   }
 
+
+  /**
+   * @Rest\Get("/arbitres")
+   */
+  public function getArbitres() {
+
+    $utilisateurs = $this->UtilisateurRepository->findAllUsers();
+    return $this->view($utilisateurs, Response::HTTP_OK);
+  }
+
   /**
   * @Rest\Put("/utilisateurs/{IdUtilisateur}")
   */

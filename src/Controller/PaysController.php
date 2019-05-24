@@ -44,7 +44,7 @@ class PaysController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Get("/pays")
+  * @Rest\Get("/allpays")
   */
   public function getAllPays() {
 

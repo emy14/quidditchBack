@@ -61,18 +61,33 @@ class Utilisateur
         return $this;
     }
 
+    /**
+     * Get role
+     *
+     * @return \App\Entity\Role $role
+     */
 
-    public function getRole(): ?string
+    public function getRole()
     {
         return $this->role;
     }
 
-    public function setRole(?string $role): self
+
+    /**
+     * Set role
+     *
+     * @param \App\Entity\Role $role
+     *
+     * @return Role
+     */
+    public function setRole(Role $role)
     {
         $this->role = $role;
 
         return $this;
     }
+
+
 
     public function getEmail(): ?string
     {

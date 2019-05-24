@@ -22,14 +22,10 @@ class Joueur
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $prenom;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
      * @ORM\JoinColumn(name="nationalite", referencedColumnName="idPays")
      */
+
     private $nationalite;
 
     /**
@@ -66,18 +62,6 @@ class Joueur
         return $this;
     }
 
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public function setPrenom(?string $prenom): self
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
     /**
      * Get nationalite
      *
@@ -93,7 +77,7 @@ class Joueur
      *
      * @param \App\Entity\Pays $nationalite
      *
-     * @return Joueur
+     * @return Pays
      */
     public function setNationalite(Pays $nationalite = null)
     {

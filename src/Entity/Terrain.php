@@ -22,7 +22,8 @@ class Terrain
     private $nom;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
+     * @ORM\JoinColumn(name="lieu", referencedColumnName="idPays")
      */
     private $lieu;
 
@@ -43,12 +44,26 @@ class Terrain
         return $this;
     }
 
-    public function getLieu(): ?int
+    /**
+     * Get lieu
+     *
+     * @return \App\Entity\Pays $lieu
+     */
+
+    public function getLieu()
     {
         return $this->lieu;
     }
 
-    public function setLieu(?int $lieu): self
+    /**
+     * Set lieu
+     *
+     * @param \App\Entity\Pays $lieu
+     *
+     * @return Pays
+     */
+
+    public function setLieu(Pays $lieu)
     {
         $this->lieu = $lieu;
 
