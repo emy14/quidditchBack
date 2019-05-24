@@ -27,8 +27,8 @@ class Joueur
     private $prenom;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Pays")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
+     * @ORM\JoinColumn(name="nationalite", referencedColumnName="idPays")
      */
     private $nationalite;
 
@@ -38,14 +38,14 @@ class Joueur
     private $age;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Poste")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Poste")
+     * @ORM\JoinColumn(name="poste", referencedColumnName="idPoste")
      */
     private $poste;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="Quidditch\Entity\Equipe")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
+     * @ORM\JoinColumn(name="equipe", referencedColumnName="idEquipe")
      */
     private $equipe;
 

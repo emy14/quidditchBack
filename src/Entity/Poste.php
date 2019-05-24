@@ -12,7 +12,7 @@ class Poste
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name= "idPoste", type="integer")
      */
     private $idPoste;
 
