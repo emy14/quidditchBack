@@ -32,7 +32,8 @@ class Tournoi
     private $date_fin;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
+     * @ORM\JoinColumn(name="pays", referencedColumnName="idPays")
      */
     private $pays;
 
