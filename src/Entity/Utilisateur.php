@@ -22,7 +22,8 @@ class Utilisateur
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Role")
+     * @ORM\JoinColumn(name="role", referencedColumnName="idRole")
      */
     private $role;
 
