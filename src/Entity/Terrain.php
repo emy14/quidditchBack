@@ -23,7 +23,7 @@ class Terrain
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
-     * @ORM\JoinColumn(name="lieu", referencedColumnName="idPays")
+     * @ORM\JoinColumn(name="lieu", referencedColumnName="idPays", onDelete="CASCADE")
      */
     private $lieu;
 

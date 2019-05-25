@@ -23,7 +23,7 @@ class Utilisateur
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Role")
-     * @ORM\JoinColumn(name="role", referencedColumnName="idRole")
+     * @ORM\JoinColumn(name="role", referencedColumnName="idRole",onDelete="CASCADE")
      */
     private $role;
 

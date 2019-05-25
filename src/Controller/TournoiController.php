@@ -82,8 +82,23 @@ class TournoiController extends AbstractFOSRestController {
 
     if ($tournoi) {
       $tournoi->setNom($request->get('nom'));
-      $tournoi->setDate($request->get('date'));
-      $tournoi->setPays($request->get('pays'));
+
+      $serializer = new Serializer(array(new DateTimeNormalizer()));
+
+      $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
+      $tournoi->setDateDebut($dateDebut);
+
+      $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
+      $tournoi->setDateFin($dateDebut);
+
+
+      $pays = $this->getDoctrine()
+          ->getRepository(Pays::class)
+          ->find($request->get('pays'));
+
+
+      $tournoi->setPays($pays);
+
       $this->TournoiRepository->save($this->getDoctrine()->getManager(), $tournoi);
     }
 
@@ -103,7 +118,7 @@ class TournoiController extends AbstractFOSRestController {
       $this->TournoiRepository->delete($this->getDoctrine()->getManager(), $tournoi);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($tournoi, Response::HTTP_OK);
   }
 
 }

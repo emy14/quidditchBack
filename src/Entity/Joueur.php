@@ -23,7 +23,7 @@ class Joueur
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
-     * @ORM\JoinColumn(name="nationalite", referencedColumnName="idPays")
+     * @ORM\JoinColumn(name="nationalite", referencedColumnName="idPays" ,onDelete="CASCADE")
      */
 
     private $nationalite;
@@ -35,13 +35,13 @@ class Joueur
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Poste")
-     * @ORM\JoinColumn(name="poste", referencedColumnName="idPoste")
+     * @ORM\JoinColumn(name="poste", referencedColumnName="idPoste" ,onDelete="CASCADE")
      */
     private $poste;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
-     * @ORM\JoinColumn(name="equipe", referencedColumnName="idEquipe")
+     * @ORM\JoinColumn(name="equipe", referencedColumnName="idEquipe",onDelete="CASCADE")
      */
     private $equipe;
 

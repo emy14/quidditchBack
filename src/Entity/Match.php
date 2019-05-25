@@ -44,37 +44,37 @@ class Match
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
-     * @ORM\JoinColumn(name="arbitre", referencedColumnName="idUtilisateur")
+     * @ORM\JoinColumn(name="arbitre", referencedColumnName="idUtilisateur", onDelete="CASCADE")
      */
     private $arbitre;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Niveau")
-     * @ORM\JoinColumn(name="niveau", referencedColumnName="idNiveau")
+     * @ORM\JoinColumn(name="niveau", referencedColumnName="idNiveau",onDelete="CASCADE")
      */
     private $niveau;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Terrain")
-     * @ORM\JoinColumn(name="terrain", referencedColumnName="idTerrain")
+     * @ORM\JoinColumn(name="terrain", referencedColumnName="idTerrain",onDelete="CASCADE")
      */
     private $terrain;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
-     * @ORM\JoinColumn(name="premiereEquipe", referencedColumnName="idEquipe")
+     * @ORM\JoinColumn(name="premiereEquipe", referencedColumnName="idEquipe", onDelete="CASCADE")
      */
     private $premiereEquipe;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe")
-     * @ORM\JoinColumn(name="deuxiemeEquipe", referencedColumnName="idEquipe")
+     * @ORM\JoinColumn(name="deuxiemeEquipe", referencedColumnName="idEquipe", onDelete="CASCADE")
      */
     private $deuxiemeEquipe;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Tournoi")
-     * @ORM\JoinColumn(name="tournoi", referencedColumnName="idTournoi")
+     * @ORM\JoinColumn(name="tournoi", referencedColumnName="idTournoi",onDelete="CASCADE")
      */
     private $tournoi;
 

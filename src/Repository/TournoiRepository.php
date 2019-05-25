@@ -26,7 +26,7 @@ class TournoiRepository extends ServiceEntityRepository
 
     public function findByTournoiId($id) {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.IdTournoi = :id')
+            ->andWhere('t.idTournoi = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()

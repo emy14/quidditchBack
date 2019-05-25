@@ -34,7 +34,7 @@ class Tournoi
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Pays")
-     * @ORM\JoinColumn(name="pays", referencedColumnName="idPays")
+     * @ORM\JoinColumn(name="pays", referencedColumnName="idPays", onDelete="CASCADE")
      */
     private $pays;
 
@@ -96,9 +96,9 @@ class Tournoi
      *
      * @return Pays
      */
-    public function setPays($id)
+    public function setPays($pays)
     {
-        $this->pays = $id;
+        $this->pays = $pays;
 
         return $this;
     }
