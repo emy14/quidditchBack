@@ -83,7 +83,7 @@ class EquipeController extends AbstractFOSRestController {
       $this->EquipeRepository->delete($this->getDoctrine()->getManager(), $equipe);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($equipe, Response::HTTP_OK);
   }
 
 }

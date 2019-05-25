@@ -26,7 +26,7 @@ class EquipeRepository extends ServiceEntityRepository
 
     public function findByEquipeId($id) {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.IdEquipe = :id')
+            ->andWhere('e.idEquipe = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()

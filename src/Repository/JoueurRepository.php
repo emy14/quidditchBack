@@ -26,7 +26,7 @@ class JoueurRepository extends ServiceEntityRepository
 
     public function findByJoueurId($id) {
         return $this->createQueryBuilder('j')
-            ->andWhere('j.IdJoueur = :id')
+            ->andWhere('j.idJoueur = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()

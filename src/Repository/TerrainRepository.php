@@ -26,7 +26,7 @@ class TerrainRepository extends ServiceEntityRepository
 
     public function findByTerrainId($id){
         return $this->createQueryBuilder('te')
-            ->andWhere('te.IdTerrain = :id')
+            ->andWhere('te.idTerrain = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()

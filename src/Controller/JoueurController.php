@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Equipe;
+use App\Entity\Pays;
 use App\Repository\JoueurRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use App\Entity\Joueur;
@@ -27,10 +29,27 @@ class JoueurController extends AbstractFOSRestController {
 
     $joueur = new joueur();
     $joueur->setNom($request->get('nom'));
-    $joueur->setNationalite($request->get('nationalite'));
-    $joueur->setAge($request->get('age'));
-    $joueur->setPoste($request->get('poste'));
-    $joueur->setEquipe($request->get('equipe'));
+
+    $nationalite = $this->getDoctrine()
+        ->getRepository(Pays::class)
+        ->find($request->get('nationalite'));
+
+    $joueur->setNationalite($nationalite);
+
+
+   // $joueur->setAge($request->get('age'));
+
+    $poste = $this->getDoctrine()
+        ->getRepository(Pays::class)
+        ->find($request->get('poste'));
+
+    $joueur->setPoste($poste);
+
+    $equipe = $this->getDoctrine()
+        ->getRepository(Equipe::class)
+        ->find($request->get('equipe'));
+    $joueur->setEquipe($equipe);
+
     $this->JoueurRepository->save($this->getDoctrine()->getManager(), $joueur);
 
     return $this->view( $joueur, Response::HTTP_CREATED);
@@ -67,10 +86,27 @@ class JoueurController extends AbstractFOSRestController {
 
     if ($joueur) {
       $joueur->setNom($request->get('nom'));
-      $joueur->setNationalite($request->get('nationalite'));
-      $joueur->setAge($request->get('age'));
-      $joueur->setPoste($request->get('poste'));
-      $joueur->setEquipe($request->get('equipe'));
+
+      $nationalite = $this->getDoctrine()
+          ->getRepository(Pays::class)
+          ->find($request->get('nationalite'));
+
+      $joueur->setNationalite($nationalite);
+
+
+      // $joueur->setAge($request->get('age'));
+
+      $poste = $this->getDoctrine()
+          ->getRepository(Pays::class)
+          ->find($request->get('poste'));
+
+      $joueur->setPoste($poste);
+
+      $equipe = $this->getDoctrine()
+          ->getRepository(Equipe::class)
+          ->find($request->get('equipe'));
+      $joueur->setEquipe($equipe);
+
       $this->JoueurRepository->save($this->getDoctrine()->getManager(), $joueur);
     }
 
@@ -90,7 +126,7 @@ class JoueurController extends AbstractFOSRestController {
       $this->JoueurRepository->delete($this->getDoctrine()->getManager(), $joueur);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($joueur, Response::HTTP_OK);
   }
 
 }

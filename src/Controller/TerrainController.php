@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Pays;
 use App\Repository\TerrainRepository;
 use App\Entity\Terrain;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -27,7 +28,13 @@ class TerrainController extends AbstractFOSRestController {
 
     $terrain = new terrain();
     $terrain->setNom($request->get('nom'));
-    $terrain->setLieu($request->get('lieu'));
+
+    $lieu = $this->getDoctrine()
+        ->getRepository(Pays::class)
+        ->find($request->get('lieu'));
+
+    $terrain->setLieu($lieu);
+
     $this->TerrainRepository->save($this->getDoctrine()->getManager(), $terrain);
 
     return $this->view($terrain, Response::HTTP_CREATED);
@@ -64,7 +71,13 @@ class TerrainController extends AbstractFOSRestController {
 
     if ($terrain) {
       $terrain->setNom($request->get('nom'));
-      $terrain->setLieu($request->get('lieu'));
+
+
+      $lieu = $this->getDoctrine()
+          ->getRepository(Pays::class)
+          ->find($request->get('lieu'));
+
+      $terrain->setLieu($lieu);
       $this->TerrainRepository->save($this->getDoctrine()->getManager(), $terrain);
     }
 
