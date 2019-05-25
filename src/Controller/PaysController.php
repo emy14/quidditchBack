@@ -58,7 +58,7 @@ class PaysController extends AbstractFOSRestController {
   public function putPays(Request $request) {
     $id = $request->get('idPays');
 
-    $pays = $this->PaysRepository->findById($id);
+    $pays = $this->PaysRepository->findByPaysId($id);
 
     if ($pays) {
       $pays->setNom($request->get('nom'));
@@ -74,13 +74,13 @@ class PaysController extends AbstractFOSRestController {
   public function deletePays(Request $request) {
     $id = $request->get('idPays');
 
-    $pays = $this->PaysRepository->findById($id);
+    $pays = $this->PaysRepository->findByPaysId($id);
 
     if ($pays) {
       $this->PaysRepository->delete($this->getDoctrine()->getManager(), $pays);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($pays, Response::HTTP_OK);
   }
 
 }

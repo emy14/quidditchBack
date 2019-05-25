@@ -26,7 +26,7 @@ class PaysRepository extends ServiceEntityRepository
 
     public function findByPaysId($id) {
         return $this->createQueryBuilder('pa')
-            ->andWhere('pa.IdPays = :id')
+            ->andWhere('pa.idPays = :id')
             ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()

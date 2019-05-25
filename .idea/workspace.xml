@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce55ed23-7b81-4395-94f1-2ae1fa183816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/TournoiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TournoiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Joueur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Joueur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Match.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Terrain.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Terrain.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tournoi.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PaysController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PaysController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PaysRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PaysRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,19 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Role.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+            <state relative-caret-position="188">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="e#34#54#0#PHP" expanded="true" />
               </folding>
@@ -43,31 +32,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Poste.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Tournoi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-880">
-              <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+            <state relative-caret-position="352">
+              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
               <folding>
-                <element signature="e#30#62#0#PHP" expanded="true" />
+                <element signature="e#34#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Pays.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="1270">
+              <caret line="110" column="37" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+              <folding>
+                <element signature="e#34#61#0#PHP" expanded="true" />
+                <marker date="1558815541856" expanded="true" signature="681:733" ph="..." />
+                <marker date="1558815541856" expanded="true" signature="736:1104" ph="..." />
+                <marker date="1558815541856" expanded="true" signature="736:1361" ph="..." />
+                <marker date="1558815541856" expanded="true" signature="1107:1202" ph="..." />
+                <marker date="1558815541856" expanded="true" signature="1266:1361" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="149" column="29" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
+              <folding>
+                <element signature="e#29#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/PaysRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -104,15 +122,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
               <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Terrain.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -169,7 +178,6 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Repository/TerrainRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/PosteRepository.php" />
-        <option value="$PROJECT_DIR$/src/Repository/PaysRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/NiveauRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/JoueurRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/EquipeRepository.php" />
@@ -186,16 +194,18 @@
         <option value="$PROJECT_DIR$/src/Entity/Poste.php" />
         <option value="$PROJECT_DIR$/src/Controller/JoueurController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Role.php" />
-        <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
         <option value="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/PaysController.php" />
         <option value="$PROJECT_DIR$/src/Repository/TournoiRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Tournoi.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Utilisateur.php" />
         <option value="$PROJECT_DIR$/src/Entity/Terrain.php" />
         <option value="$PROJECT_DIR$/src/Entity/Joueur.php" />
         <option value="$PROJECT_DIR$/src/Entity/Match.php" />
         <option value="$PROJECT_DIR$/src/Controller/TournoiController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/PaysRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PaysController.php" />
+        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Utilisateur.php" />
       </list>
     </option>
   </component>
@@ -421,12 +431,12 @@
       <workItem from="1558423224091" duration="7097000" />
       <workItem from="1558435304194" duration="8935000" />
       <workItem from="1558616451233" duration="598000" />
-      <workItem from="1558703952620" duration="17602000" />
+      <workItem from="1558703952620" duration="21539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51003000" />
+    <option name="totallyTimeSpent" value="54940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -450,7 +460,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
@@ -483,9 +493,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/cache.yaml">
@@ -558,13 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/PaysRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -706,42 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding>
-            <element signature="e#34#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="118" column="40" selection-start-line="118" selection-end-line="119" />
-          <folding>
-            <element signature="e#34#61#0#PHP" expanded="true" />
-            <marker date="1558725405288" expanded="true" signature="587:639" ph="..." />
-            <marker date="1558725405288" expanded="true" signature="642:1010" ph="..." />
-            <marker date="1558725405288" expanded="true" signature="642:1267" ph="..." />
-            <marker date="1558725405288" expanded="true" signature="1013:1108" ph="..." />
-            <marker date="1558725405288" expanded="true" signature="1172:1267" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/TournoiRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -811,12 +779,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/PaysRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+          <folding>
+            <element signature="e#34#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+        <state relative-caret-position="188">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
           <folding>
             <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1270">
+          <caret line="110" column="37" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+          <folding>
+            <element signature="e#34#61#0#PHP" expanded="true" />
+            <marker date="1558815541856" expanded="true" signature="681:733" ph="..." />
+            <marker date="1558815541856" expanded="true" signature="736:1104" ph="..." />
+            <marker date="1558815541856" expanded="true" signature="736:1361" ph="..." />
+            <marker date="1558815541856" expanded="true" signature="1107:1202" ph="..." />
+            <marker date="1558815541856" expanded="true" signature="1266:1361" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="149" column="29" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
+          <folding>
+            <element signature="e#29#84#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,7 +8,8 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\UtilisateurRepository;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Entity\Role;
 class UtilisateurController extends AbstractFOSRestController   {
 
   /**
@@ -42,13 +43,22 @@ class UtilisateurController extends AbstractFOSRestController   {
   /**
   * @Rest\Post("utilisateurs")
   */
-  public function postUtilisateur(Request $request)  {
+  public function postUtilisateur(Request $request, UserPasswordEncoderInterface $encoder)  {
 
     $utilisateur = new Utilisateur();
     $utilisateur->setNom($request->get('nom'));
-    $utilisateur->setRole($request->get('role'));
+
+
+    $role = $this->getDoctrine()
+        ->getRepository(Role::class)
+        ->find($request->get('roles'));
+
+    $utilisateur->setRole($role);
     $utilisateur->setEmail($request->get('email'));
-    $utilisateur->setMotDePasse($request->get('motDePasse'));
+    //encode it.
+    $encoded = $encoder->encodePassword($utilisateur, $request->get('motDePasse'));
+
+    $utilisateur->setMotDePasse($encoded);
     $this->UtilisateurRepository->save($this->getDoctrine()->getManager(), $utilisateur);
 
     return $this->view($utilisateur, Response::HTTP_CREATED);
@@ -95,8 +105,14 @@ class UtilisateurController extends AbstractFOSRestController   {
 
     if ($utilisateur) {
       $utilisateur->setNom($request->get('nom'));
-      $utilisateur->setRole($request->get('role'));
-      $utilisateur->setMotDePasse($request->get('motDePasse'));
+
+      $role = $this->getDoctrine()
+          ->getRepository(Role::class)
+          ->find($request->get('roles'));
+
+      $utilisateur->setRole($role);
+
+    //  $utilisateur->setMotDePasse($request->get('motDePasse'));
       $this->UtilisateurRepository->save($this->getDoctrine()->getManager(), $utilisateur);
     }
 
@@ -116,7 +132,7 @@ class UtilisateurController extends AbstractFOSRestController   {
       $this->UtilisateurRepository->delete($this->getDoctrine()->getManager(), $utilisateur);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($utilisateur, Response::HTTP_OK);
   }
 
 }
