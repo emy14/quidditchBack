@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Pays;
 use App\Repository\TournoiRepository;
 use App\Entity\Tournoi;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use function MongoDB\BSON\toJSON;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class TournoiController extends AbstractFOSRestController {
 
@@ -26,10 +30,22 @@ class TournoiController extends AbstractFOSRestController {
   */
   public function postTournoi(Request $request)  {
 
+
+
     $tournoi = new tournoi();
+
     $tournoi->setNom($request->get('nom'));
-    $tournoi->setDate($request->get('date'));
-    $tournoi->setPays($request->get('pays'));
+
+    $serializer = new Serializer(array(new DateTimeNormalizer()));
+    $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
+    $tournoi->setDateDebut($dateDebut);
+
+
+    $pays = $this->getDoctrine()
+        ->getRepository(Pays::class)
+        ->find($request->get('pays'));
+
+    $tournoi->setPays($pays);
     $this->TournoiRepository->save($this->getDoctrine()->getManager(), $tournoi);
 
     return $this->view($tournoi, Response::HTTP_CREATED);

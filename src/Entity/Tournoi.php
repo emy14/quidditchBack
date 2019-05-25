@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Integer;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TournoiRepository")
@@ -93,11 +94,11 @@ class Tournoi
      *
      * @param \App\Entity\Pays $pays
      *
-     * @return Tournoi
+     * @return Pays
      */
-    public function setPays(Pays $pays)
+    public function setPays($id)
     {
-        $this->pays = $pays;
+        $this->pays = $id;
 
         return $this;
     }
