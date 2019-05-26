@@ -10,6 +10,7 @@ use App\Repository\UtilisateurRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Entity\Role;
+
 class UtilisateurController extends AbstractFOSRestController   {
 
   /**
@@ -21,23 +22,31 @@ class UtilisateurController extends AbstractFOSRestController   {
     $this->UtilisateurRepository = $articleRepository;
   }
 
-//  /**
-//   *
-//  * @Rest\Post("utilisateurs")
-//  */
-//  public function loginUtilisateur(String $email, String $motDePasse)  {
-//
-//    $utilisateur = $this->UtilisateurRepository->findByUserLogin($email, $motDePasse);
-//
-//    if ($utilisateur && $utilisateur->getRole()=='ORGANISATION') {
-//      return $this->view($utilisateur, Response::HTTP_OK);
-//    } else if ($utilisateur && $utilisateur->getRole()=='ARBITRE') {
-//      header ('Location : ../../../quidditchFront/src/app/arbitrage/arbitrage.component.html');
-//      return $this->view($utilisateur, Response::HTTP_OK);
-//    } else {
-//      return $this->view($utilisateur, Response::HTTP_NO_CONTENT);
-//    }
-//  }
+  /**
+   *
+  * @Rest\Post("login")
+  */
+  public function loginUtilisateur(Request $request, UserPasswordEncoderInterface $encoder)  {
+
+
+    //we check if the username is in DB
+    $user = $this->UtilisateurRepository->findByUsername($request->get('username'));
+
+    if ($user) {
+
+      $valid = $encoder->isPasswordValid($user, $request->get('password'));
+
+      if ($valid) {
+        return $this->view(array('success' => true, 'user' => $user), Response::HTTP_OK);
+      }
+
+      return $this->view(array('success' => false, 'errors' => "Pas le bon mot de passe"), Response::HTTP_INTERNAL_SERVER_ERROR);
+
+    }
+
+
+     return $this->view(array('success' => false, 'errors' => "L'utilisateur n'existe pas."), Response::HTTP_INTERNAL_SERVER_ERROR);
+  }
 
 
   /**

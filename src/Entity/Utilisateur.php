@@ -125,7 +125,8 @@ class Utilisateur implements UserInterface
      */
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return   $this->motDePasse ;
+
     }
 
     /**
