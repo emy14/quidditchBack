@@ -98,7 +98,7 @@ class TerrainController extends AbstractFOSRestController {
       $this->TerrainRepository->delete($this->getDoctrine()->getManager(), $terrain);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($terrain, Response::HTTP_OK);
   }
 
 }

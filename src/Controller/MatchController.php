@@ -2,12 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Equipe;
+use App\Entity\Terrain;
+use App\Entity\Tournoi;
+use App\Entity\Utilisateur;
 use App\Repository\MatchRepository;
 use App\Entity\Match;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class MatchController extends AbstractFOSRestController{
 
@@ -26,15 +32,51 @@ class MatchController extends AbstractFOSRestController{
   public function postMatch(Request $request)  {
 
     $match = new match();
-    $match->setScoreDeuxiemeEquipe($request->get('scoreDeuxiemeEquipe'));
-    $match->setScorePremiereEquipe($request->get('scorePremiereEquipe'));
-    $match->setTemps($request->get('temps'));
-    $match->setDate($request->get('date'));
-    $match->setArbitre($request->get('arbitre'));
-    $match->setNiveau($request->get('niveau'));
-    $match->setTerrain($request->get('terrain'));
-    $match->setPremiereEquipe($request->get('premiereEquipe'));
-    $match->setDeuxiemeEquipe($request->get('deuxiemeEquipe'));
+    $match->setScoreDeuxiemeEquipe(0);
+    $match->setScorePremiereEquipe(0);
+    //$match->setTemps($request->get('temps'));
+
+    $serializer = new Serializer(array(new DateTimeNormalizer()));
+
+    $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
+    $match->setDateDebut($dateDebut);
+
+    $arbitre = $this->getDoctrine()
+        ->getRepository(Utilisateur::class)
+        ->find($request->get('arbitre'));
+
+    $match->setArbitre($arbitre);
+
+
+   // $match->setNiveau($request->get('niveau'));
+
+
+    $terrain = $this->getDoctrine()
+        ->getRepository(Terrain::class)
+        ->find($request->get('terrain'));
+
+    $match->setTerrain($terrain);
+
+    $premiereEquipe = $this->getDoctrine()
+        ->getRepository(Equipe::class)
+        ->find($request->get('premiereEquipe'));
+
+    $match->setPremiereEquipe($premiereEquipe);
+
+    $deuxiemeEquipe = $this->getDoctrine()
+        ->getRepository(Equipe::class)
+        ->find($request->get('deuxiemeEquipe'));
+
+    $match->setDeuxiemeEquipe($deuxiemeEquipe);
+
+
+    $tournoi = $this->getDoctrine()
+        ->getRepository(Tournoi::class)
+        ->find($request->get('tournoi'));
+
+    $match->setTournoi($tournoi);
+
+
     $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
 
     return $this->view($match, Response::HTTP_CREATED);
@@ -92,15 +134,56 @@ class MatchController extends AbstractFOSRestController{
     $match = $this->MatchRepository->findByMatchId($id);
 
     if ($match) {
-      $match->setScoreDeuxiemeEquipe($request->get('scoreDeuxiemeEquipe'));
-      $match->setScorePremiereEquipe($request->get('scorePremiereEquipe'));
-      $match->setTemps($request->get('temps'));
-      $match->setDate($request->get('date'));
-      $match->setArbitre($request->get('arbitre'));
-      $match->setNiveau($request->get('niveau'));
-      $match->setTerrain($request->get('terrain'));
-      $match->setPremiereEquipe($request->get('premiereEquipe'));
-      $match->setDeuxiemeEquipe($request->get('deuxiemeEquipe'));
+
+      //$match->setTemps($request->get('temps'));
+
+      $serializer = new Serializer(array(new DateTimeNormalizer()));
+
+      $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
+      $match->setDateDebut($dateDebut);
+
+
+      if($request->get('dateFin') != "none"){
+        $dateFin = $serializer->denormalize($request->get('dateFin'), \DateTime::class);
+        $match->setDateFin($dateFin);
+      } else {
+        $match->setDateFin(null);
+      }
+
+      $arbitre = $this->getDoctrine()
+          ->getRepository(Utilisateur::class)
+          ->find($request->get('arbitre'));
+
+      $match->setArbitre($arbitre);
+
+
+      // $match->setNiveau($request->get('niveau'));
+
+
+      $terrain = $this->getDoctrine()
+          ->getRepository(Terrain::class)
+          ->find($request->get('terrain'));
+
+      $match->setTerrain($terrain);
+
+      $premiereEquipe = $this->getDoctrine()
+          ->getRepository(Equipe::class)
+          ->find($request->get('premiereEquipe'));
+
+      $match->setPremiereEquipe($premiereEquipe);
+
+      $deuxiemeEquipe = $this->getDoctrine()
+          ->getRepository(Equipe::class)
+          ->find($request->get('deuxiemeEquipe'));
+
+      $match->setDeuxiemeEquipe($deuxiemeEquipe);
+
+      $tournoi = $this->getDoctrine()
+          ->getRepository(Tournoi::class)
+          ->find($request->get('tournoi'));
+
+      $match->setTournoi($tournoi);
+
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
@@ -137,7 +220,7 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->delete($this->getDoctrine()->getManager(), $match);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($match, Response::HTTP_OK);
   }
 
 }

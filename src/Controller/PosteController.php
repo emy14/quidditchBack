@@ -82,7 +82,7 @@ class PosteController extends AbstractFOSRestController {
       $this->PosteRepository->delete($this->getDoctrine()->getManager(), $poste);
     }
 
-    return $this->view([], Response::HTTP_NO_CONTENT);
+    return $this->view($poste, Response::HTTP_OK);
   }
 
 }

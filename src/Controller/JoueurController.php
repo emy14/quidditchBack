@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Equipe;
 use App\Entity\Pays;
+use App\Entity\Poste;
 use App\Repository\JoueurRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use App\Entity\Joueur;
@@ -40,7 +41,7 @@ class JoueurController extends AbstractFOSRestController {
    // $joueur->setAge($request->get('age'));
 
     $poste = $this->getDoctrine()
-        ->getRepository(Pays::class)
+        ->getRepository(Poste::class)
         ->find($request->get('poste'));
 
     $joueur->setPoste($poste);
@@ -97,7 +98,7 @@ class JoueurController extends AbstractFOSRestController {
       // $joueur->setAge($request->get('age'));
 
       $poste = $this->getDoctrine()
-          ->getRepository(Pays::class)
+          ->getRepository(Poste::class)
           ->find($request->get('poste'));
 
       $joueur->setPoste($poste);

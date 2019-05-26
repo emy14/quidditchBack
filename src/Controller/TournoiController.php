@@ -88,8 +88,12 @@ class TournoiController extends AbstractFOSRestController {
       $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
       $tournoi->setDateDebut($dateDebut);
 
-      $dateDebut = $serializer->denormalize($request->get('dateDebut'), \DateTime::class);
-      $tournoi->setDateFin($dateDebut);
+      if($request->get('dateFin') != "none"){
+        $dateFin = $serializer->denormalize($request->get('dateFin'), \DateTime::class);
+        $tournoi->setDateFin($dateFin);
+      } else {
+        $tournoi->setDateFin(null);
+      }
 
 
       $pays = $this->getDoctrine()
