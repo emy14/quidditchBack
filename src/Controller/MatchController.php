@@ -16,6 +16,7 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\VarDumper\Cloner\Data;
+use Pusher\Pusher;
 
 class MatchController extends AbstractFOSRestController{
 
@@ -193,19 +194,19 @@ class MatchController extends AbstractFOSRestController{
     return $this->view($match, Response::HTTP_OK);
   }
 
-  public function triggerPusherAction()
+  public function triggerPusherAction($pusher, $match)
   {
     /** @var \Pusher $pusher */
-    $pusher = $this->container->get('lopi_pusher');
+  //  $pusher = $this->container->get('lopi_pusher');
 
     $data['message'] = 'hello world';
-    $pusher->trigger('matchs', 'update', $data);
+    $pusher->trigger('matchs', 'update', $match);
   }
 
   /**
    * @Rest\Put("/matchs/score/{idMatch}")
    */
-  public function putMatchScore(Request $request)  {
+  public function putMatchScore(Request $request, Pusher $pusher)  {
 
     $id = $request->get('idMatch');
 
@@ -217,7 +218,7 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
-    $this->triggerPusherAction();
+    $this->triggerPusherAction($pusher, $match);
 
     return $this->view($match, Response::HTTP_OK);
   }
