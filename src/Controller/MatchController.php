@@ -14,6 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class MatchController extends AbstractFOSRestController{
 
@@ -99,6 +101,7 @@ class MatchController extends AbstractFOSRestController{
   public function getMatchsParArbitre(Request $request)  {
 
     $arbitre = $request->get('arbitre');
+
 
     $matchs = $this->MatchRepository->findMatchsByArbitre($arbitre);
     return $this->view($matchs, Response::HTTP_OK);
@@ -190,6 +193,15 @@ class MatchController extends AbstractFOSRestController{
     return $this->view($match, Response::HTTP_OK);
   }
 
+  public function triggerPusherAction()
+  {
+    /** @var \Pusher $pusher */
+    $pusher = $this->container->get('lopi_pusher');
+
+    $data['message'] = 'hello world';
+    $pusher->trigger('matchs', 'update', $data);
+  }
+
   /**
    * @Rest\Put("/matchs/score/{idMatch}")
    */
@@ -205,8 +217,29 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
+    $this->triggerPusherAction();
+
     return $this->view($match, Response::HTTP_OK);
   }
+
+  /**
+   * @Rest\Put("/matchs/end/{idMatch}")
+   */
+  public function endMatch(Request $request)  {
+
+    $id = $request->get('idMatch');
+
+    $match = $this->MatchRepository->findByMatchId($id);
+
+    if ($match) {
+
+      $match->setDateFin(new \DateTime('now'));
+      $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
+    }
+
+    return $this->view($match, Response::HTTP_OK);
+  }
+
 
   /**
   * @Rest\Delete("/matchs/{idMatch}")

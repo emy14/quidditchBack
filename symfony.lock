@@ -129,6 +129,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "laupifrpar/pusher-bundle": {
+        "version": "3.0.0"
+    },
     "monolog/monolog": {
         "version": "1.24.0"
     },
@@ -149,6 +152,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "paragonie/sodium_compat": {
+        "version": "v1.10.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -173,6 +179,18 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
+    },
+    "pusher/pusher-php-server": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "8dd3ea817217453e14ab596317177465211e01d2"
+        },
+        "files": [
+            "./config/packages/pusher_php_server.yaml"
+        ]
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -361,6 +379,9 @@
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"

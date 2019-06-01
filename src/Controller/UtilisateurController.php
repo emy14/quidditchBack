@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Utilisateur;
+use App\Repository\RoleRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,8 +19,15 @@ class UtilisateurController extends AbstractFOSRestController   {
    */
   private $UtilisateurRepository;
 
-  public function __construct(UtilisateurRepository $articleRepository){
-    $this->UtilisateurRepository = $articleRepository;
+  /**
+   * @var RoleRepository
+   */
+  private $RoleRepository;
+
+  public function __construct(UtilisateurRepository $userRepository, RoleRepository $roleRepository){
+    $this->UtilisateurRepository = $userRepository;
+    $this->RoleRepository = $roleRepository;
+
   }
 
   /**
@@ -32,20 +40,21 @@ class UtilisateurController extends AbstractFOSRestController   {
     //we check if the username is in DB
     $user = $this->UtilisateurRepository->findByUsername($request->get('username'));
 
+
     if ($user) {
 
       $valid = $encoder->isPasswordValid($user, $request->get('password'));
 
       if ($valid) {
-        return $this->view(array('success' => true, 'user' => $user), Response::HTTP_OK);
+        return $this->view($user, Response::HTTP_OK);
       }
 
-      return $this->view(array('success' => false, 'errors' => "Pas le bon mot de passe"), Response::HTTP_INTERNAL_SERVER_ERROR);
+      return $this->view("Pas le bon mot de passe", Response::HTTP_INTERNAL_SERVER_ERROR);
 
     }
 
 
-     return $this->view(array('success' => false, 'errors' => "L'utilisateur n'existe pas."), Response::HTTP_INTERNAL_SERVER_ERROR);
+     return $this->view("L'utilisateur n'existe pas.", Response::HTTP_INTERNAL_SERVER_ERROR);
   }
 
 
@@ -58,9 +67,8 @@ class UtilisateurController extends AbstractFOSRestController   {
     $utilisateur->setNom($request->get('nom'));
 
 
-    $role = $this->getDoctrine()
-        ->getRepository(Role::class)
-        ->find($request->get('roles'));
+    $role = $this->RoleRepository
+        ->findByName($request->get('roles'));
 
     $utilisateur->setRole($role);
     $utilisateur->setEmail($request->get('email'));
@@ -99,7 +107,7 @@ class UtilisateurController extends AbstractFOSRestController   {
    */
   public function getArbitres() {
 
-    $utilisateurs = $this->UtilisateurRepository->findAllUsers();
+    $utilisateurs = $this->UtilisateurRepository->findAllArbitres("ARBITRE");
     return $this->view($utilisateurs, Response::HTTP_OK);
   }
 
@@ -115,9 +123,8 @@ class UtilisateurController extends AbstractFOSRestController   {
     if ($utilisateur) {
       $utilisateur->setNom($request->get('nom'));
 
-      $role = $this->getDoctrine()
-          ->getRepository(Role::class)
-          ->find($request->get('roles'));
+      $role = $this->RoleRepository
+          ->findByName($request->get('roles'));
 
       $utilisateur->setRole($role);
 

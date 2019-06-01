@@ -6,6 +6,7 @@ use App\Entity\Utilisateur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Query\Expr;
 
 /**
  * @method Utilisateur[]    findAll()
@@ -26,9 +27,11 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findAllArbitres() {
+    public function findAllArbitres($name) {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.role =', 1)
+            ->innerJoin('u.role', 'r')
+            ->where('r.name = :name')
+            ->setParameter('name', $name)
             ->getQuery()
             ->getResult()
             ;
