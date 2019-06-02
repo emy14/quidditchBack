@@ -32,7 +32,7 @@ class MatchController extends AbstractFOSRestController{
   /**
   * @Rest\Post("matchs")
   */
-  public function postMatch(Request $request)  {
+  public function postMatch(Request $request, Pusher $pusher)  {
 
     $match = new match();
     $match->setScoreDeuxiemeEquipe(0);
@@ -81,6 +81,12 @@ class MatchController extends AbstractFOSRestController{
 
 
     $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
+
+
+    $matchs = $this->MatchRepository->findMatchsByTournoi($match->getTournoi());
+    $this->triggerPusherAction($pusher, $matchs);
+
+
 
     return $this->view($match, Response::HTTP_CREATED);
   }
@@ -131,7 +137,7 @@ class MatchController extends AbstractFOSRestController{
   /**
   * @Rest\Put("/matchs/{idMatch}")
   */
-  public function putMatch(Request $request)  {
+  public function putMatch(Request $request, Pusher $pusher)  {
 
     $id = $request->get('idMatch');
 
@@ -191,16 +197,21 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
+    $matchs = $this->MatchRepository->findMatchsByTournoi($match->getTournoi());
+    $this->triggerPusherAction($pusher, $matchs);
+
     return $this->view($match, Response::HTTP_OK);
   }
 
-  public function triggerPusherAction($pusher, $match)
+  public function triggerPusherAction($pusher, $matchs)
   {
     /** @var \Pusher $pusher */
   //  $pusher = $this->container->get('lopi_pusher');
 
+    $serializedEntity = $this->container->get('serializer')->serialize($matchs, 'json');
+
     $data['message'] = 'hello world';
-    $pusher->trigger('matchs', 'update', $match);
+    $pusher->trigger('matchs', 'update', $serializedEntity);
   }
 
   /**
@@ -218,7 +229,10 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
-    $this->triggerPusherAction($pusher, $match);
+
+    $matchs = $this->MatchRepository->findMatchsByTournoi($match->getTournoi());
+
+    $this->triggerPusherAction($pusher, $matchs);
 
     return $this->view($match, Response::HTTP_OK);
   }
@@ -226,7 +240,7 @@ class MatchController extends AbstractFOSRestController{
   /**
    * @Rest\Put("/matchs/end/{idMatch}")
    */
-  public function endMatch(Request $request)  {
+  public function endMatch(Request $request, Pusher $pusher)  {
 
     $id = $request->get('idMatch');
 
@@ -238,6 +252,9 @@ class MatchController extends AbstractFOSRestController{
       $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
     }
 
+    $matchs = $this->MatchRepository->findMatchsByTournoi($match->getTournoi());
+    $this->triggerPusherAction($pusher, $matchs);
+
     return $this->view($match, Response::HTTP_OK);
   }
 
@@ -245,7 +262,7 @@ class MatchController extends AbstractFOSRestController{
   /**
   * @Rest\Delete("/matchs/{idMatch}")
   */
-  public function deleteMatch(Request $request)  {
+  public function deleteMatch(Request $request, Pusher $pusher)  {
     $id = $request->get('idMatch');
 
     $match = $this->MatchRepository->findByMatchId($id);
@@ -253,6 +270,9 @@ class MatchController extends AbstractFOSRestController{
     if ($match) {
       $this->MatchRepository->delete($this->getDoctrine()->getManager(), $match);
     }
+
+    $matchs = $this->MatchRepository->findMatchsByTournoi($match->getTournoi());
+    $this->triggerPusherAction($pusher, $matchs);
 
     return $this->view($match, Response::HTTP_OK);
   }
