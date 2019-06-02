@@ -26,7 +26,7 @@ class TournoiController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Post("tournois")
+  * @Rest\Post("/secure/tournois")
   */
   public function postTournoi(Request $request)  {
 
@@ -73,7 +73,7 @@ class TournoiController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/tournois/{idTournoi}")
+  * @Rest\Put("/secure/tournois/{idTournoi}")
   */
   public function putTournoi(Request $request)  {
     $id = $request->get('idTournoi');
@@ -110,7 +110,7 @@ class TournoiController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/tournois/{idTournoi}")
+  * @Rest\Delete("/secure/tournois/{idTournoi}")
   */
   public function deleteTournoi(Request $request)  {
 

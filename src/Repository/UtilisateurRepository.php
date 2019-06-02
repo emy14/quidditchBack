@@ -47,11 +47,18 @@ class UtilisateurRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByRole($role) {
+        $qb = $this->createQueryBuilder('u')
+            ->andWhere('u.roles LIKE :roles')
+            ->setParameter('roles', '%"'.$role.'"%');
 
-    public function findByUsername($email)  {
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findByUsername($username)  {
         return $this->createQueryBuilder('u')
-          ->andWhere('u.email = :email')
-          ->setParameter('email', $email)
+          ->andWhere('u.username = :username')
+          ->setParameter('username', $username)
           ->getQuery()
           ->getOneOrNullResult()
         ;

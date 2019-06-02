@@ -22,7 +22,7 @@ class TerrainController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Post("terrains")
+  * @Rest\Post("/secure/terrains")
   */
   public function postTerrain(Request $request)  {
 
@@ -61,7 +61,7 @@ class TerrainController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/terrains/{idTerrain}")
+  * @Rest\Put("/secure/terrains/{idTerrain}")
   */
   public function putTerrain(Request $request)  {
 
@@ -86,7 +86,7 @@ class TerrainController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/terrains/{idTerrain}")
+  * @Rest\Delete("/secure/terrains/{idTerrain}")
   */
   public function deleteTerrain(Request $request)  {
 

@@ -21,7 +21,7 @@ class NiveauController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Post("niveaux")
+  * @Rest\Post("/secure/niveaux")
   */
   public function postNiveau(Request $request)  {
 
@@ -53,7 +53,7 @@ class NiveauController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/niveaux/{idNiveau}")
+  * @Rest\Put("/secure/niveaux/{idNiveau}")
   */
   public function putNiveau(Request $request) {
     $id = $request->get('idNiveau');
@@ -69,7 +69,7 @@ class NiveauController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/niveaux/{idNiveau}")
+  * @Rest\Delete("/secure/niveaux/{idNiveau}")
   */
   public function deleteNiveau(Request $request)  {
     $id = $request->get('idNiveau');

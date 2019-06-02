@@ -24,7 +24,7 @@ class JoueurController extends AbstractFOSRestController {
   }
   
   /**
-  * @Rest\Post("joueurs")
+  * @Rest\Post("/secure/joueurs")
   */
   public function postJoueur(Request $request)  {
 
@@ -77,7 +77,7 @@ class JoueurController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/joueurs/{idJoueur}")
+  * @Rest\Put("/secure/joueurs/{idJoueur}")
   */
   public function putJoueur(Request $request)  {
 
@@ -115,7 +115,7 @@ class JoueurController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/joueurs/{idJoueur}")
+  * @Rest\Delete("/secure/joueurs/{idJoueur}")
   */
   public function deleteJoueur(Request $request)  {
 

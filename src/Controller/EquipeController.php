@@ -22,7 +22,7 @@ class EquipeController extends AbstractFOSRestController {
 
   
   /**
-  * @Rest\Post("equipes")
+  * @Rest\Post("/secure/equipes")
   */
   public function postEquipe(Request $request)  {
 
@@ -54,7 +54,7 @@ class EquipeController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/equipes/{idEquipe}")
+  * @Rest\Put("/secure/equipes/{idEquipe}")
   */
   public function putEquipe(Request $request)  {
 
@@ -71,7 +71,7 @@ class EquipeController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/equipes/{idEquipe}")
+  * @Rest\Delete("/secure/equipes/{idEquipe}")
   */
   public function deleteEquipe(Request $request)  {
 

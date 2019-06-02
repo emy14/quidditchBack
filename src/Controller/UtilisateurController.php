@@ -32,7 +32,7 @@ class UtilisateurController extends AbstractFOSRestController   {
 
   /**
    *
-  * @Rest\Post("login")
+  * @Rest\Post("/secure/login")
   */
   public function loginUtilisateur(Request $request, UserPasswordEncoderInterface $encoder)  {
 
@@ -40,26 +40,26 @@ class UtilisateurController extends AbstractFOSRestController   {
     //we check if the username is in DB
     $user = $this->UtilisateurRepository->findByUsername($request->get('username'));
 
+//
+//    if ($user) {
+//
+//      $valid = $encoder->isPasswordValid($user, $request->get('password'));
+//
+//      if ($valid) {
+//        return $this->view($user, Response::HTTP_OK);
+//      }
+//
+//      return $this->view("Pas le bon mot de passe", Response::HTTP_INTERNAL_SERVER_ERROR);
+//
+//    }
 
-    if ($user) {
 
-      $valid = $encoder->isPasswordValid($user, $request->get('password'));
-
-      if ($valid) {
-        return $this->view($user, Response::HTTP_OK);
-      }
-
-      return $this->view("Pas le bon mot de passe", Response::HTTP_INTERNAL_SERVER_ERROR);
-
-    }
-
-
-     return $this->view("L'utilisateur n'existe pas.", Response::HTTP_INTERNAL_SERVER_ERROR);
+     return $this->view($user, Response::HTTP_OK);
   }
 
 
   /**
-  * @Rest\Post("utilisateurs")
+  * @Rest\Post("/secure/utilisateurs")
   */
   public function postUtilisateur(Request $request, UserPasswordEncoderInterface $encoder)  {
 
@@ -82,7 +82,7 @@ class UtilisateurController extends AbstractFOSRestController   {
   }
 
   /**
-  * @Rest\Get("/utilisateurs/{IdUtilisateur}")
+  * @Rest\Get("/secure/utilisateurs/{IdUtilisateur}")
   */
   public function getUtilisateur(Request $request)  {
 
@@ -93,7 +93,7 @@ class UtilisateurController extends AbstractFOSRestController   {
   }
 
   /**
-  * @Rest\Get("/utilisateurs")
+  * @Rest\Get("/secure/utilisateurs")
   */
   public function getUtilisateurs() {
 
@@ -107,12 +107,12 @@ class UtilisateurController extends AbstractFOSRestController   {
    */
   public function getArbitres() {
 
-    $utilisateurs = $this->UtilisateurRepository->findAllArbitres("ARBITRE");
+    $utilisateurs = $this->UtilisateurRepository->findByRole("ARBITRE");
     return $this->view($utilisateurs, Response::HTTP_OK);
   }
 
   /**
-  * @Rest\Put("/utilisateurs/{IdUtilisateur}")
+  * @Rest\Put("/secure/utilisateurs/{IdUtilisateur}")
   */
   public function putUtilisateur(Request $request)  {
 
@@ -136,7 +136,7 @@ class UtilisateurController extends AbstractFOSRestController   {
   }
 
   /**
-  * @Rest\Delete("/utilisateurs/{IdUtilisateur}")
+  * @Rest\Delete("/secure/utilisateurs/{IdUtilisateur}")
   */
   public function deleteUtilisateur(Request $request)  {
 

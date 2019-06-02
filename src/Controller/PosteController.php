@@ -54,7 +54,7 @@ class PosteController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/postes/{idPoste}")
+  * @Rest\Put("/secure/postes/{idPoste}")
   */
   public function putPoste(Request $request)  {
 
@@ -70,7 +70,7 @@ class PosteController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/postes/{idPoste}")
+  * @Rest\Delete("/secure/postes/{idPoste}")
   */
   public function deletePoste(Request $request)  {
 

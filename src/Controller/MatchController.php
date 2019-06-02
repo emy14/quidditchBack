@@ -30,7 +30,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-  * @Rest\Post("matchs")
+  * @Rest\Post("/secure/matchs")
   */
   public function postMatch(Request $request, Pusher $pusher)  {
 
@@ -103,7 +103,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-  * @Rest\Get("/matchs/arbitre/{arbitre}")
+  * @Rest\Get("secure/matchs/arbitre/{arbitre}")
   */
   public function getMatchsParArbitre(Request $request)  {
 
@@ -118,6 +118,7 @@ class MatchController extends AbstractFOSRestController{
    * @Rest\Get("/matchs/tournoi/{arbitre}")
    */
   public function getMatchsParTournoi(Request $request)  {
+
 
     $tournoi = $request->get('arbitre');
 
@@ -135,7 +136,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-  * @Rest\Put("/matchs/{idMatch}")
+  * @Rest\Put("/secure/matchs/{idMatch}")
   */
   public function putMatch(Request $request, Pusher $pusher)  {
 
@@ -215,7 +216,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-   * @Rest\Put("/matchs/score/{idMatch}")
+   * @Rest\Put("/secure/matchs/score/{idMatch}")
    */
   public function putMatchScore(Request $request, Pusher $pusher)  {
 
@@ -238,7 +239,7 @@ class MatchController extends AbstractFOSRestController{
   }
 
   /**
-   * @Rest\Put("/matchs/end/{idMatch}")
+   * @Rest\Put("/secure/matchs/end/{idMatch}")
    */
   public function endMatch(Request $request, Pusher $pusher)  {
 
@@ -260,7 +261,7 @@ class MatchController extends AbstractFOSRestController{
 
 
   /**
-  * @Rest\Delete("/matchs/{idMatch}")
+  * @Rest\Delete("/secure/matchs/{idMatch}")
   */
   public function deleteMatch(Request $request, Pusher $pusher)  {
     $id = $request->get('idMatch');

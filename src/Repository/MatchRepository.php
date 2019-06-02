@@ -42,6 +42,16 @@ class MatchRepository extends ServiceEntityRepository
           ->getResult();
     }
 
+    public function findByRole($role) {
+        $qb = $this->_em->createQueryBuilder();
+        $qb->select('u')
+            ->from($this->_entityName, 'u')
+            ->where('u.roles LIKE :roles')
+            ->setParameter('roles', '%"'.$role.'"%');
+
+        return $qb->getQuery()->getResult();
+    }
+
     public function findMatchsByTournoi($tournoi) {
         return $this->createQueryBuilder('m')
             ->andWhere('m.tournoi = :tournoi')

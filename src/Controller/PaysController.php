@@ -21,7 +21,7 @@ class PaysController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Post("pays")
+  * @Rest\Post("/secure/pays")
   */
   public function postPays(Request $request) {
 
@@ -53,7 +53,7 @@ class PaysController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Put("/pays/{idPays}")
+  * @Rest\Put("/secure/pays/{idPays}")
   */
   public function putPays(Request $request) {
     $id = $request->get('idPays');
@@ -69,7 +69,7 @@ class PaysController extends AbstractFOSRestController {
   }
 
   /**
-  * @Rest\Delete("/pays/{idPays}")
+  * @Rest\Delete("/secure/pays/{idPays}")
   */
   public function deletePays(Request $request) {
     $id = $request->get('idPays');

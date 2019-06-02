@@ -2,163 +2,192 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
+ * User
+ *
+ * @ORM\Table(name="user", indexes={
+ *     @ORM\Index(name="search_idx_username", columns={"username"}),
+ *     @ORM\Index(name="search_idx_email", columns={"email"}),
+ * })
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
+ *
+ * @UniqueEntity(fields={"email"}, message="EMAIL_IS_ALREADY_IN_USE")
+ *
  */
-class Utilisateur implements UserInterface
+class Utilisateur extends BaseUser
 {
+    const ROLE_SUPER_ADMIN = "ROLE_SUPER_ADMIN";
+    const ROLE_ADMIN = "ADMIN";
+    const ROLE_USER = "ROLE_USER";
+    const ROLE_ARBITRE = "ARBITRE";
+
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * To validate supported roles
+     *
+     * @var array
+     */
+    static public $ROLES_SUPPORTED = array(
+        self::ROLE_SUPER_ADMIN => self::ROLE_SUPER_ADMIN,
+        self::ROLE_ADMIN => self::ROLE_ADMIN,
+        self::ROLE_USER => self::ROLE_USER,
+        self::ROLE_ARBITRE => self::ROLE_ARBITRE,
+    );
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="idUtilisateur", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idUtilisateur;
+    protected $idUtilisateur;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     *
+     * @Assert\NotBlank(message="FIELD_CAN_NOT_BE_EMPTY")
+     * @Assert\Email(
+     *     message = "INCORRECT_EMAIL_ADDRESS",
+     *     checkMX = true
+     * )
      */
-    private $nom;
+    protected $email;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Role")
-     * @ORM\JoinColumn(name="role", referencedColumnName="idRole",onDelete="CASCADE")
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=100, nullable=true)
+     *
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 100,
+     *      minMessage = "FIELD_LENGTH_TOO_SHORT",
+     *      maxMessage = "FIELD_LENGTH_TOO_LONG"
+     * )
      */
-    private $role;
+    private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=100, nullable=true)
+     *
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 100,
+     *      minMessage = "FIELD_LENGTH_TOO_SHORT",
+     *      maxMessage = "FIELD_LENGTH_TOO_LONG"
+     * )
      */
-    private $email;
+    private $lastName;
+
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean")
+     *
+     * @Assert\Type(
+     *     type="bool",
+     *     message="FIELD_MUST_BE_BOOLEAN_TYPE"
+     * )
      */
-    private $motDePasse;
+    private $deleted;
 
-  public function getIdUtilisateur(): ?int
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->deleted = false;
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
     {
         return $this->idUtilisateur;
     }
 
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(?string $nom): self
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function setEmail(?string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-
     /**
-     * Set role
+     * Set firstName
      *
-     * @param \App\Entity\Role $role
+     * @param string $firstName
      *
-     * @return Role
+     * @return User
      */
-    public function setRole(Role $role)
+    public function setFirstName($firstName)
     {
-        $this->role = $role;
-
-        return $this;
-    }
-
-
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function getMotDePasse(): ?string
-    {
-        return $this->motDePasse;
-    }
-
-    public function setMotDePasse(?string $motDePasse): self
-    {
-        $this->motDePasse = $motDePasse;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     /**
-     * Returns the roles granted to the user.
+     * Get firstName
      *
-     *     public function getRoles()
-     *     {
-     *         return ['ROLE_USER'];
-     *     }
-     *
-     * Alternatively, the roles might be stored on a ``roles`` property,
-     * and populated in any number of different ways when the user object
-     * is created.
-     *
-     * @return (Role|string)[] The user roles
+     * @return string
      */
-    public function getRoles()
+    public function getFirstName()
     {
-        return $this->role;
+        return $this->firstName;
     }
 
     /**
-     * Returns the password used to authenticate the user.
+     * Set lastName
      *
-     * This should be the encoded password. On authentication, a plain-text
-     * password will be salted, encoded, and then compared to this value.
+     * @param string $lastName
      *
-     * @return string The password
+     * @return User
      */
-    public function getPassword()
+    public function setLastName($lastName)
     {
-        return   $this->motDePasse ;
+        $this->lastName = $lastName;
 
+        return $this;
     }
 
     /**
-     * Returns the salt that was originally used to encode the password.
+     * Get lastName
      *
-     * This can return null if the password was not encoded using a salt.
-     *
-     * @return string|null The salt
+     * @return string
      */
-    public function getSalt()
+    public function getLastName()
     {
-        // TODO: Implement getSalt() method.
+        return $this->lastName;
     }
 
     /**
-     * Returns the username used to authenticate the user.
+     * Set deleted
      *
-     * @return string The username
+     * @param boolean $deleted
+     *
+     * @return User
      */
-    public function getUsername()
+    public function setDeleted($deleted)
     {
-        return   $this->email ;
+        $this->deleted = $deleted;
+
+        return $this;
     }
 
     /**
-     * Removes sensitive data from the user.
+     * Get deleted
      *
-     * This is important if, at any given point, sensitive information like
-     * the plain-text password is stored on this object.
+     * @return boolean
      */
-    public function eraseCredentials()
+    public function getDeleted()
     {
-        $this->motDePasse = null;
+        return $this->deleted;
     }
 }
