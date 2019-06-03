@@ -34,6 +34,16 @@ class MatchRepository extends ServiceEntityRepository
         ;
     }
 
+
+    public function findByCreatedBy($id) {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.createdBy = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     public function findMatchsByArbitre($arbitre) {
       return $this->createQueryBuilder('m')
           ->andWhere('m.arbitre = :arbitre')

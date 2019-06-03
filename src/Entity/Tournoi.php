@@ -38,6 +38,13 @@ class Tournoi
      */
     private $pays;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
+     * @ORM\JoinColumn(name="createdBy", referencedColumnName="idUtilisateur", onDelete="CASCADE")
+     */
+    private $createdBy;
+
+
     public function getIdTournoi(): ?int
     {
         return $this->idTournoi;
@@ -99,6 +106,31 @@ class Tournoi
     public function setPays($pays)
     {
         $this->pays = $pays;
+
+        return $this;
+    }
+
+
+    /**
+     * Get createdBy
+     *
+     * @return \App\Entity\Utilisateur $createdBy
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @return \App\Entity\Utilisateur $createdBy
+     *
+     * @return Utilisateur
+     */
+    public function setCreatedBy(Utilisateur $createdBy)
+    {
+        $this->createdBy = $createdBy;
 
         return $this;
     }

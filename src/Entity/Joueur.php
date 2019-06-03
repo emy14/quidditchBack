@@ -45,6 +45,12 @@ class Joueur
      */
     private $equipe;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Niveau")
+     * @ORM\JoinColumn(name="league", referencedColumnName="idNiveau",onDelete="CASCADE")
+     */
+    private $league;
+
     public function getIdJoueur(): ?int
     {
         return $this->idJoueur;
@@ -142,6 +148,30 @@ class Joueur
     public function setEquipe(Equipe $equipe = null)
     {
         $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    /**
+     * Get league
+     *
+     * @return \App\Entity\Niveau $league
+     */
+    public function getLeague()
+    {
+        return $this->league;
+    }
+
+    /**
+     * Set league
+     *
+     * @param \App\Entity\Niveau $league
+     *
+     * @return Niveau
+     */
+    public function setLeague(Niveau $league = null)
+    {
+        $this->league = $league;
 
         return $this;
     }

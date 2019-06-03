@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Utilisateur;
 use App\Entity\Pays;
 use App\Repository\TournoiRepository;
 use App\Entity\Tournoi;
@@ -46,6 +47,13 @@ class TournoiController extends AbstractFOSRestController {
         ->find($request->get('pays'));
 
     $tournoi->setPays($pays);
+
+    $user = $this->getDoctrine()
+        ->getRepository(Utilisateur::class)
+        ->find($request->get('user'));
+
+    $tournoi->setCreatedBy($user);
+
     $this->TournoiRepository->save($this->getDoctrine()->getManager(), $tournoi);
 
     return $this->view($tournoi, Response::HTTP_CREATED);
@@ -68,6 +76,17 @@ class TournoiController extends AbstractFOSRestController {
   public function getTournois() {
 
     $tournois = $this->TournoiRepository->findAllTournoi();
+    return $this->view($tournois, Response::HTTP_OK);
+
+  }
+
+  /**
+   * @Rest\Get("secure/createdby/tournois/{idUser}")
+   */
+  public function getTournoisAdmin(Request $request) {
+    $id = $request->get('idUser');
+
+    $tournois = $this->TournoiRepository->findByCreatedBy($id);
     return $this->view($tournois, Response::HTTP_OK);
 
   }

@@ -79,6 +79,12 @@ class MatchController extends AbstractFOSRestController{
 
     $match->setTournoi($tournoi);
 
+    $user = $this->getDoctrine()
+        ->getRepository(Utilisateur::class)
+        ->find($request->get('user'));
+
+    $match->setCreatedBy($user);
+
 
     $this->MatchRepository->save($this->getDoctrine()->getManager(), $match);
 
@@ -100,6 +106,18 @@ class MatchController extends AbstractFOSRestController{
 
     $match = $this->MatchRepository->findByMatchId($id);
     return $this->view($match, Response::HTTP_OK);
+  }
+
+
+  /**
+   * @Rest\Get("secure/createdby/matchs/{idUser}")
+   */
+  public function getMatchsAdmin(Request $request) {
+    $id = $request->get('idUser');
+
+    $matchs = $this->MatchRepository->findByCreatedBy($id);
+    return $this->view($matchs, Response::HTTP_OK);
+
   }
 
   /**

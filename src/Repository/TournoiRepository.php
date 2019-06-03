@@ -33,6 +33,15 @@ class TournoiRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByCreatedBy($id) {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.createdBy = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     public function save($em, Tournoi $tournoi)
     {
         $em->persist($tournoi);

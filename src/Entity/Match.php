@@ -49,6 +49,12 @@ class Match
     private $arbitre;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur")
+     * @ORM\JoinColumn(name="createdBy", referencedColumnName="idUtilisateur", onDelete="CASCADE")
+     */
+    private $createdBy;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Niveau")
      * @ORM\JoinColumn(name="niveau", referencedColumnName="idNiveau",onDelete="CASCADE")
      */
@@ -167,6 +173,32 @@ class Match
 
         return $this;
     }
+
+
+    /**
+     * Get createdBy
+     *
+     * @return \App\Entity\Utilisateur $createdBy
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @return \App\Entity\Utilisateur $createdBy
+     *
+     * @return Utilisateur
+     */
+    public function setCreatedBy(Utilisateur $createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
 
     /**
      * Get niveau
