@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Equipe;
 use App\Entity\Joueur;
+use App\Entity\Niveau;
 use App\Entity\Pays;
 use App\Entity\Poste;
 use App\Entity\Tournoi;
@@ -37,6 +38,11 @@ class EquipeJoueurData extends Fixture
         $Joueur->setAge("20");
         $Joueur->setNationalite($Pays);
 
+        $Niveau = new Niveau();
+        $Niveau->setNom("Championnat Jeune");
+        $manager->persist($Niveau);
+        $Joueur->setLeague($Niveau);
+
         $poste = new Poste();
         $poste->setNom("Attrapeur");
         $manager->persist($poste);
@@ -64,6 +70,7 @@ class EquipeJoueurData extends Fixture
         $Joueur->setNationalite($Pays);
         $Joueur->setPoste($poste);
 
+        $Joueur->setLeague($Niveau);
         $manager->persist($Joueur);
 
         $Equipe = new Equipe();

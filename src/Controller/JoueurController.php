@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Equipe;
 use App\Entity\Pays;
+use App\Entity\Niveau;
 use App\Entity\Poste;
 use App\Repository\JoueurRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -51,6 +52,15 @@ class JoueurController extends AbstractFOSRestController {
         ->find($request->get('equipe'));
     $joueur->setEquipe($equipe);
 
+
+    $joueur->setAge($request->get('age'));
+
+    $niveau = $this->getDoctrine()
+        ->getRepository(Niveau::class)
+        ->find($request->get('league'));
+
+    $joueur->setLeague($niveau);
+
     $this->JoueurRepository->save($this->getDoctrine()->getManager(), $joueur);
 
     return $this->view( $joueur, Response::HTTP_CREATED);
@@ -95,7 +105,13 @@ class JoueurController extends AbstractFOSRestController {
       $joueur->setNationalite($nationalite);
 
 
-      // $joueur->setAge($request->get('age'));
+      $joueur->setAge($request->get('age'));
+
+      $niveau = $this->getDoctrine()
+          ->getRepository(Niveau::class)
+          ->find($request->get('league'));
+
+      $joueur->setLeague($niveau);
 
       $poste = $this->getDoctrine()
           ->getRepository(Poste::class)
