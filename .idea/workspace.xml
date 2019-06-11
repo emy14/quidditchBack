@@ -2,57 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce55ed23-7b81-4395-94f1-2ae1fa183816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Quidditch/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/bin/phpunit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/cache.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/debug.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/easy_log_handler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/swiftmailer.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/dev/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/doctrine_migrations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/prod/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/prod/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/security.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/swiftmailer.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/test/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/test/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/test/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/test/swiftmailer.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/test/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/translation.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/twig.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/packages/validator.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/routes/annotations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/routes/dev/twig.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/routes/dev/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/phpunit.xml.dist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Controller/EssaiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/src/Repository/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/symfony.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/templates/base.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/templates/essai/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/tests/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quidditch/translations/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer-setup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/fos_auth_server.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/fos_rest.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/fos_user.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/pusher_php_server.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ClassementController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EquipeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/JoueurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MatchController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/NiveauController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/PaysController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/PosteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/TerrainController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/TournoiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UtilisateurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/ClientData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/EquipeJoueurData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/NiveauData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/PaysData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/PosteData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/TerrainData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/UserTournoiData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/AccessToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/AuthCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Classement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Equipe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Joueur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Match.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Niveau.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Pays.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Poste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/RefreshToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Terrain.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tournoi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Utilisateur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20190603092603.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20190603115221.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ClassementRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/EquipeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/JoueurRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/MatchRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/NiveauRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/PaysRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/PosteRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/RoleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TerrainRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TournoiRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/TokenAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/quidditchBack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quidditchBack.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,10 +86,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/EssaiController.php">
+        <entry file="file://$PROJECT_DIR$/src/Repository/UtilisateurRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <state relative-caret-position="782">
+              <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1581">
+              <caret line="107" column="37" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1955">
+              <caret line="118" column="35" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+              <folding>
+                <element signature="e#30#72#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -77,15 +136,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="119">
+              <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -94,25 +148,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
+        <entry file="file://$PROJECT_DIR$/config/packages/fos_auth_server.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="51">
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>equipeRepository</find>
+      <find>: View</find>
+      <find>matchRepository</find>
+      <find>joueurRepository</find>
+      <find>return View::create(</find>
+      <find>doctrine</find>
+      <find>Entity</find>
+      <find>save</find>
+      <find>delete(</find>
+      <find>delete</find>
+      <find>score</find>
+      <find>dat</find>
+      <find>role</find>
+      <find>o</find>
+      <find>setDa</find>
+      <find>ar</find>
+      <find>arbitre</find>
+      <find>tournoi</find>
+      <find>config.</find>
+      <find>BaseNode</find>
+      <find>config.yaml</find>
+      <find>yaml</find>
+      <find>ya</find>
+      <find>Utilisateur</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>classementRepository</replace>
+      <replace>joueurRepository</replace>
+      <replace>equipeRepository</replace>
+      <replace>return $this-&gt;view(</replace>
+      <replace />
+      <replace>config</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,10 +218,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Quidditch/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/Quidditch/config/routes.yaml" />
-        <option value="$PROJECT_DIR$/Quidditch/src/Controller/EssaiController.php" />
-        <option value="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/Terrain.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Joueur.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Match.php" />
+        <option value="$PROJECT_DIR$/src/Repository/PaysRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/TerrainRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/EquipeRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/JoueurRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/RoleRepository.php" />
+        <option value="$PROJECT_DIR$/config/config.yml" />
+        <option value="$PROJECT_DIR$/config/packages/pusher_php_server.yaml" />
+        <option value="$PROJECT_DIR$/src/Kernel.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/ContainerDumpTest.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/AnnotatedControllerTest.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/ConfigDumpReferenceCommandTest.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/framework-bundle/Tests/Functional/ProfilerTest.php" />
+        <option value="$PROJECT_DIR$/config/config.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/config" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/config/packages/config.yaml" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Security/TokenAuthentificator.php" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/Client.php" />
+        <option value="$PROJECT_DIR$/config/packages/fos_user.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/AuthCode.php" />
+        <option value="$PROJECT_DIR$/config/packages/fos_auth_server.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/AccessToken.php" />
+        <option value="$PROJECT_DIR$/src/Entity/RefreshToken.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/ClientData.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
+        <option value="$PROJECT_DIR$/config/routes/annotations.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/ClassementController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/JoueurController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/NiveauController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PosteController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TerrainController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TournoiController.php" />
+        <option value="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" />
+        <option value="$PROJECT_DIR$/config/packages/fos_rest.yaml" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/UserData.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PaysController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/MatchRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/EquipeController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UtilisateurRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/UtilisateurController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/MatchController.php" />
+        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
       </list>
     </option>
   </component>
@@ -233,15 +378,17 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -294,11 +441,81 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DataFixtures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="composer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="nikic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="ocramius" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="ocramius" type="462c0819:PsiDirectoryNode" />
+              <item name="package-versions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="ocramius" type="462c0819:PsiDirectoryNode" />
+              <item name="package-versions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quidditchBack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quidditchBack" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="ocramius" type="462c0819:PsiDirectoryNode" />
+              <item name="package-versions" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="PackageVersions" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,6 +523,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\quidditchBack\config\packages" />
+      <recent name="C:\laragon\www\quidditchBack\src\Controller\Rest" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -330,30 +555,53 @@
       <option name="presentableId" value="Default" />
       <updated>1558345167981</updated>
       <workItem from="1558345169280" duration="2484000" />
-      <workItem from="1558349981832" duration="116000" />
+      <workItem from="1558349981832" duration="743000" />
+      <workItem from="1558351895618" duration="3059000" />
+      <workItem from="1558355479313" duration="2016000" />
+      <workItem from="1558423224091" duration="7097000" />
+      <workItem from="1558435304194" duration="8935000" />
+      <workItem from="1558616451233" duration="598000" />
+      <workItem from="1558703952620" duration="23519000" />
+      <workItem from="1558882599871" duration="7930000" />
+      <workItem from="1559070824202" duration="1294000" />
+      <workItem from="1559215934656" duration="660000" />
+      <workItem from="1559221682856" duration="3826000" />
+      <workItem from="1559404639943" duration="8611000" />
+      <workItem from="1559486859533" duration="592000" />
+      <workItem from="1559487469984" duration="14743000" />
+      <workItem from="1560252303984" duration="222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2600000" />
+    <option name="totallyTimeSpent" value="94798000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12751678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -366,51 +614,304 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Quidditch/.env.test" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/.env" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/bin/console" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/bin/phpunit" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/public/index.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/bundles.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/templates/essai/index.html.twig" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/templates/base.html.twig" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/services.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/dev/web_profiler.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/dev/twig.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/bootstrap.php" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes/annotations.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/config/routes.yaml" />
-    <entry file="file://$PROJECT_DIR$/Quidditch/src/Controller/EssaiController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/EssaiController.php">
+    <entry file="file://$PROJECT_DIR$/config/nelmio_api_doc" />
+    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" />
+    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Equipe.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Classement.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Match.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="46" column="29" selection-start-line="46" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Joueur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="73" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/AuthCode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="25" selection-start-line="31" selection-end-line="32" />
+          <folding>
+            <element signature="e#29#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Poste.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/RefreshToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#22#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ClientData" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/AccessToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="e#113#177#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ClientData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="68" column="28" selection-start-line="26" selection-start-column="9" selection-end-line="68" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/NiveauRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ClassementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/JoueurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NiveauController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PosteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TournoiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="112" column="26" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/nelmio_cors.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/validator.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes/dev/web_profiler.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/fos_rest.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/UserData.php" />
+    <entry file="file://$PROJECT_DIR$/config/packages/fos_user.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MatchRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EquipeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TerrainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TournoiRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UtilisateurRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MatchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="107" column="37" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="118" column="35" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+          <folding>
+            <element signature="e#30#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PaysController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/fos_auth_server.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="306">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>

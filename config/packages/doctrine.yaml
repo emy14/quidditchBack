@@ -8,12 +8,17 @@ parameters:
 doctrine:
     dbal:
         # configure these for your database server
+        dbname:               quidditch
+        host:                 localhost
+        port:                 3306
+        user:                 root
+        password:             NekozombW409
         driver: 'pdo_mysql'
         server_version: '5.7'
-        charset: utf8mb4
+        charset: utf8
         default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
+            charset: utf8
+            collate: utf8_unicode_ci
 
         url: '%env(resolve:DATABASE_URL)%'
     orm:

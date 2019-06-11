@@ -1,0 +1,8 @@
+lopi_pusher:
+  # Default configuration
+  scheme: '%env(PUSHER_SCHEME)%'
+  host: '%env(PUSHER_HOST)%'
+  port: '%env(PUSHER_PORT)%'
+  cluster: '%env(PUSHER_CLUSTER)%'
+  timeout: '%env(PUSHER_TIMEOUT)%'
+  debug: false
